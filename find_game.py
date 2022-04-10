@@ -90,7 +90,7 @@ def search_game_at_store():
     category_check = checklist[3]
     releaseYear_check = checklist[4]
 
-    #
+    #Mendaftarkan semua baris yang memiliki karakteristik berdasarkan inputnya
     baris_id = all_valid_row(c.csvID_id, id)
     baris_nama = all_valid_row(c.csvID_nama, nama)
     baris_price = all_valid_row(c.csvID_price, price)
