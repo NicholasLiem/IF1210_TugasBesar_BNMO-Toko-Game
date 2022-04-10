@@ -4,7 +4,6 @@ import constant as c
 
 dir = "Data/riwayat.csv"
 data_riwayat = parseran.csv_to_matrix(dir)
-panjang_kolom_data = arr.panjang_kolom(data_riwayat)
 
 def riwayat():
     user = input("Login session user: ")
