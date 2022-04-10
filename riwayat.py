@@ -17,5 +17,3 @@ def riwayat():
         print(c.r_listing)
         for item in riwayat_tanpa_id:
             print(item)
-
-riwayat()

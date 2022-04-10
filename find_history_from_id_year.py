@@ -54,49 +54,47 @@ def array_function(array, csv_col_id, validator, function):
                 print("")
 
     else: #Kasus yang tidak mungkin terjadi
-        print(c.p_error)
+        print(c.s_error)
 
 #komentarin ini
 def search_my_game():
     #seach_my_game() merupakan fungsi utama dalam modul ini. Fungsi ini menerima input (id_game atau release_year atau tidak keduanya) 
     #dan mengeluarkan output yang diminta.
 
-    id_game = input(c.p_idGame)
-    release_year = input(c.p_releaseYear)
-    print(c.p_listing)
+    id_game = input(c.s_idGame)
+    release_year = input(c.s_releaseYear)
+    print(c.s_listing)
 
     #Pembagian kasus
     if (id_game != "") or (release_year != ""): #Mengecek apakah isian semuanya kosong atau tidak
 
         #"Dictionary" lokal supaya mempermudah debugging dan lebih enak dilihat
-        release_year_in_array = array_function(data_riwayat,c.csvID_releaseYear, release_year, "CHECK")
-        id_game_in_array = array_function(data_riwayat,c.csvID_id,id_game, "CHECK")
-        data_baris_game_id = array_function(data_riwayat, c.csvID_id, id_game,"DATA_BARIS")
+        release_year_in_array = array_function(data_riwayat,c.csvID_riwayat_releaseYear, release_year, "CHECK")
+        id_game_in_array = array_function(data_riwayat,c.csvID_riwayat_id,id_game, "CHECK")
+        data_baris_game_id = array_function(data_riwayat, c.csvID_riwayat_id, id_game,"DATA_BARIS")
 
         #Kasus pertama mengecek jika input id_game kosong atau ada tetapi tidak terdaftar di data_riwayat kemudian
         #jika tahun yang dimasukkan merupakan bagian dari data_riwayat, maka akan diprint semua data yang berhubungan dengan tahun tsb
         if (id_game == "" or not(id_game_in_array)) and release_year_in_array:
-            array_function(data_riwayat,c.csvID_releaseYear,release_year, "PRINT_DATA")
+            array_function(data_riwayat,c.csvID_riwayat_releaseYear,release_year, "PRINT_DATA")
 
         #Kasus kedua mengecek jika tahun yang diisi kosong, dan mengecek jika id_game inputnya terdaftar di data_riwayat, kemudian
         #jika terdaftar di data_riwayat, akan dikeluarkan data sesuai dengan id_game yang diinput
         elif release_year == "" and id_game_in_array:
-            array_function(data_riwayat,c.csvID_id,id_game, "PRINT_DATA")
+            array_function(data_riwayat,c.csvID_riwayat_riwayat_id,id_game, "PRINT_DATA")
 
         #Kasus ketiga mengecek jika id_game yang diinput berada dalam data_riwayat, kemudian mengecek apakah pada baris id_game tersebut
         #tahunnya sama, jika sama maka akan dikeluarkan data berdasarkan id_game tersebut. Mengapa kasus ini dibuat?
         #Kasus ini dibuat untuk kasus di mana kedua input benar (id_game dan release_year). Kasus-kasus di atas tidak membahas jika kedua
         #variabel terisi, oleh karena itu diperlukan kasus khusus ini.
-        elif not(data_baris_game_id == []) and (data_baris_game_id)[c.csvID_releaseYear] == release_year:
-            array_function(data_riwayat,c.csvID_id,id_game, "PRINT_DATA")
+        elif not(data_baris_game_id == []) and (data_baris_game_id)[c.csvID_riwayat_releaseYear] == release_year:
+            array_function(data_riwayat,c.csvID_riwayat_id,id_game, "PRINT_DATA")
 
         #Tidak memenuhi semua kasus, artinya data tidak ditemukan.
         else:
-            print(c.p_notFound)
+            print(c.s_notFound)
 
     else: #(id_game == "") and (release_year == ""). Sesuai arahan, jika tidak ada input untuk id_game dan release_year maka akan diberikan
         #semua data riwayat yang dimiliki user.
         for baris in range(1,arr.panjang_baris(data_riwayat)):
             print(data_riwayat[baris]) #Perlu dibenerin prinannya
-
-search_my_game()

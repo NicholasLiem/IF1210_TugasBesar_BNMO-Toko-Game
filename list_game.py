@@ -20,5 +20,3 @@ def list_game():
         print(c.l_listing)
         for item in list_game:
             print(item)
-
-list_game()

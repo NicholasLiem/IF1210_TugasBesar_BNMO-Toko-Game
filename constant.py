@@ -16,12 +16,12 @@ r_notFound = "Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah beli_g
 r_listing = "Daftar game:"
 
 #ID kolom | game.csv
-csvID_id = 0
-csvID_nama = 1
-csvID_kategori = 2
-csvID_releaseYear = 3
-csvID_price = 4
-csvID_stock = 5
+csvID_game_id = 0
+csvID_game_nama = 1
+csvID_game_kategori = 2
+csvID_game_releaseYear = 3
+csvID_game_price = 4
+csvID_game_stock = 5
 
 #ID Kolom | riwayat.csv
 csvID_riwayat_game_id = 0
@@ -33,3 +33,11 @@ csvID_riwayat_tahun_beli = 4
 #ID Kolom | kepemilikan.csv
 csvID_kepemilikan_game_id = 0
 csvID_kepemilikan_user_id = 1
+
+#ID Kolom | user.csv
+csvID_user_id = 0
+csvID_user_username = 1
+csvID_user_nama = 2
+csvID_user_password = 3
+csvID_user_role = 4
+csvID_user_saldo = 5

@@ -20,11 +20,11 @@ data_game = parseran.csv_to_matrix(dir)
 #Data-data umum: harga, kategori, tahun rilis
 
 def input_checker(id_game, nama_game, price_game, category_game, releaseYear_game):
-    found_id = arr.found_in_kolom(data_game,c.csvID_id, id_game)
-    found_nama = arr.found_in_kolom(data_game,c.csvID_nama, nama_game)
-    found_price = arr.found_in_kolom(data_game,c.csvID_price, price_game)
-    found_category = arr.found_in_kolom(data_game,c.csvID_kategori, category_game)
-    found_releaseYear = arr.found_in_kolom(data_game,c.csvID_releaseYear, releaseYear_game)
+    found_id = arr.found_in_kolom(data_game,c.csvID_game_id, id_game)
+    found_nama = arr.found_in_kolom(data_game,c.csvID_game_nama, nama_game)
+    found_price = arr.found_in_kolom(data_game,c.csvID_game_price, price_game)
+    found_category = arr.found_in_kolom(data_game,c.csvID_game_kategori, category_game)
+    found_releaseYear = arr.found_in_kolom(data_game,c.csvID_game_releaseYear, releaseYear_game)
     
     return found_id, found_nama, found_price, found_category, found_releaseYear
 
@@ -65,11 +65,11 @@ def search_game_at_store():
     releaseYear_check = checklist[4]
 
     #Mendaftarkan semua baris yang memiliki karakteristik berdasarkan inputnya
-    baris_id = arr.all_valid_row(data_game, c.csvID_id, id)
-    baris_nama = arr.all_valid_row(data_game, c.csvID_nama, nama)
-    baris_price = arr.all_valid_row(data_game, c.csvID_price, price)
-    baris_kategori = arr.all_valid_row(data_game, c.csvID_kategori, category)
-    baris_releaseYear = arr.all_valid_row(data_game, c.csvID_releaseYear, releaseYear)
+    baris_id = arr.all_valid_row(data_game, c.csvID_game_id, id)
+    baris_nama = arr.all_valid_row(data_game, c.csvID_game_nama, nama)
+    baris_price = arr.all_valid_row(data_game, c.csvID_game_price, price)
+    baris_kategori = arr.all_valid_row(data_game, c.csvID_game_kategori, category)
+    baris_releaseYear = arr.all_valid_row(data_game, c.csvID_game_releaseYear, releaseYear)
 
     #Proses pembagian kasus
     if id == "" and nama == "" and price == "" and category == "" and releaseYear == "":
@@ -132,5 +132,3 @@ def search_game_at_store():
             
         else:
             print(c.s_notFound)
-
-search_game_at_store()
