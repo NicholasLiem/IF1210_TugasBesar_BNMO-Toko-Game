@@ -29,7 +29,7 @@ def join(s, array_string):
     return out
 
 #SEARCHING
-def search_in_kolom(array,kolom_id,validator):
+def found_in_kolom(array,kolom_id,validator):
     found = False
     for i in range(panjang_baris(array)):
         if array[i][kolom_id] == validator:
@@ -38,3 +38,10 @@ def search_in_kolom(array,kolom_id,validator):
         return True
     else:
         return False
+
+def all_valid_row(array,csvID,validator):
+    data_baris = []
+    for baris in array:
+        if baris[csvID] == validator:
+            data_baris = fungsi_append(data_baris, baris)
+    return data_baris

@@ -26,31 +26,13 @@ def input_checker(id_game, nama_game, price_game, category_game, releaseYear_gam
     found_category = False
     found_releaseYear = False
    
-    found_id = found_in_kolom(data_game,c.csvID_id, id_game)
-    found_nama = found_in_kolom(data_game,c.csvID_nama, nama_game)
-    found_price = found_in_kolom(data_game,c.csvID_price, price_game)
-    found_category = found_in_kolom(data_game,c.csvID_kategori, category_game)
-    found_releaseYear = found_in_kolom(data_game,c.csvID_releaseYear, releaseYear_game)
+    found_id = arr.found_in_kolom(data_game,c.csvID_id, id_game)
+    found_nama = arr.found_in_kolom(data_game,c.csvID_nama, nama_game)
+    found_price = arr.found_in_kolom(data_game,c.csvID_price, price_game)
+    found_category = arr.found_in_kolom(data_game,c.csvID_kategori, category_game)
+    found_releaseYear = arr.found_in_kolom(data_game,c.csvID_releaseYear, releaseYear_game)
     
     return found_id, found_nama, found_price, found_category, found_releaseYear
-
-def found_in_kolom(array,kolom_id,validator):
-    found = False
-    panjang_baris_data = arr.panjang_baris(array)
-    for i in range(panjang_baris_data):
-        if array[i][kolom_id] == validator:
-            found = True
-    if found == True:
-        return True
-    else:
-        return False
-
-def all_valid_row(array,csvID,validator):
-    data_baris = []
-    for baris in array:
-        if baris[csvID] == validator:
-            data_baris = arr.fungsi_append(data_baris, baris)
-    return data_baris
 
 #Multipurpose array
 def operasi_array(array1, array2, operator):
@@ -89,11 +71,11 @@ def search_game_at_store():
     releaseYear_check = checklist[4]
 
     #Mendaftarkan semua baris yang memiliki karakteristik berdasarkan inputnya
-    baris_id = all_valid_row(data_game, c.csvID_id, id)
-    baris_nama = all_valid_row(data_game, c.csvID_nama, nama)
-    baris_price = all_valid_row(data_game, c.csvID_price, price)
-    baris_kategori = all_valid_row(data_game, c.csvID_kategori, category)
-    baris_releaseYear = all_valid_row(data_game, c.csvID_releaseYear, releaseYear)
+    baris_id = arr.all_valid_row(data_game, c.csvID_id, id)
+    baris_nama = arr.all_valid_row(data_game, c.csvID_nama, nama)
+    baris_price = arr.all_valid_row(data_game, c.csvID_price, price)
+    baris_kategori = arr.all_valid_row(data_game, c.csvID_kategori, category)
+    baris_releaseYear = arr.all_valid_row(data_game, c.csvID_releaseYear, releaseYear)
 
     #Proses pembagian kasus
     if id == "" and nama == "" and price == "" and category == "" and releaseYear == "":

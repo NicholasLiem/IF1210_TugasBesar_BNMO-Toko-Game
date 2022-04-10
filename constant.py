@@ -11,6 +11,10 @@ s_notFound = "Tidak ada game pada toko yang memenuhi kriteria"
 l_notFound = "Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli."
 l_listing = "Daftar game:"
 
+#Bagian riwayat
+r_notFound = "Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah beli_game untuk membeli."
+r_listing = "Daftar game:"
+
 #ID kolom | game.csv
 csvID_id = 0
 csvID_nama = 1
@@ -25,3 +29,7 @@ csvID_riwayat_nama = 1
 csvID_riwayat_harga = 2
 csvID_riwayat_user_id = 3
 csvID_riwayat_tahun_beli = 4 
+
+#ID Kolom | kepemilikan.csv
+csvID_kepemilikan_game_id = 0
+csvID_kepemilikan_user_id = 1
