@@ -45,3 +45,14 @@ def all_valid_row(array,csvID,validator):
         if baris[csvID] == validator:
             data_baris = fungsi_append(data_baris, baris)
     return data_baris
+
+def delete_column(array, columnCSVId):
+    panjang_kolom_data = panjang_kolom(array)
+    array_without_column = []
+    for item in array:
+        baris_temp = []
+        for i in range(panjang_kolom_data):
+            if i != columnCSVId:
+                baris_temp = fungsi_append(baris_temp,item[i])
+        array_without_column = fungsi_append(array_without_column, baris_temp)
+    return array_without_column
