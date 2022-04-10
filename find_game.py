@@ -20,12 +20,6 @@ data_game = parseran.csv_to_matrix(dir)
 #Data-data umum: harga, kategori, tahun rilis
 
 def input_checker(id_game, nama_game, price_game, category_game, releaseYear_game):
-    found_id = False
-    found_nama = False
-    found_price = False
-    found_category = False
-    found_releaseYear = False
-   
     found_id = arr.found_in_kolom(data_game,c.csvID_id, id_game)
     found_nama = arr.found_in_kolom(data_game,c.csvID_nama, nama_game)
     found_price = arr.found_in_kolom(data_game,c.csvID_price, price_game)
@@ -139,4 +133,4 @@ def search_game_at_store():
         else:
             print(c.s_notFound)
 
-#search_game_at_store()
+search_game_at_store()
