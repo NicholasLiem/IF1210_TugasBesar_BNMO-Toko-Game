@@ -16,9 +16,6 @@ dir = "Data/game.csv"
 
 #Mendifinisikan array yang akan dipakai
 data_game = parseran.csv_to_matrix(dir)
-panjang_baris_data = arr.panjang_baris(data_game)
-panjang_kolom_data = arr.panjang_kolom(data_game)
-
 #Data-data unik: id, nama
 #Data-data umum: harga, kategori, tahun rilis
 
@@ -29,27 +26,28 @@ def input_checker(id_game, nama_game, price_game, category_game, releaseYear_gam
     found_category = False
     found_releaseYear = False
    
-    found_id = search_in_kolom(id_game,c.csvID_id)
-    found_nama = search_in_kolom(nama_game,c.csvID_nama)
-    found_price = search_in_kolom(price_game,c.csvID_price)
-    found_category = search_in_kolom(category_game,c.csvID_kategori)
-    found_releaseYear = search_in_kolom(releaseYear_game,c.csvID_releaseYear)
+    found_id = found_in_kolom(data_game,c.csvID_id, id_game)
+    found_nama = found_in_kolom(data_game,c.csvID_nama, nama_game)
+    found_price = found_in_kolom(data_game,c.csvID_price, price_game)
+    found_category = found_in_kolom(data_game,c.csvID_kategori, category_game)
+    found_releaseYear = found_in_kolom(data_game,c.csvID_releaseYear, releaseYear_game)
     
     return found_id, found_nama, found_price, found_category, found_releaseYear
 
-def search_in_kolom(validator,kolom_id):
+def found_in_kolom(array,kolom_id,validator):
     found = False
+    panjang_baris_data = arr.panjang_baris(array)
     for i in range(panjang_baris_data):
-        if data_game[i][kolom_id] == validator:
+        if array[i][kolom_id] == validator:
             found = True
     if found == True:
         return True
     else:
         return False
 
-def all_valid_row(csvID,validator):
+def all_valid_row(array,csvID,validator):
     data_baris = []
-    for baris in data_game:
+    for baris in array:
         if baris[csvID] == validator:
             data_baris = arr.fungsi_append(data_baris, baris)
     return data_baris
@@ -91,11 +89,11 @@ def search_game_at_store():
     releaseYear_check = checklist[4]
 
     #Mendaftarkan semua baris yang memiliki karakteristik berdasarkan inputnya
-    baris_id = all_valid_row(c.csvID_id, id)
-    baris_nama = all_valid_row(c.csvID_nama, nama)
-    baris_price = all_valid_row(c.csvID_price, price)
-    baris_kategori = all_valid_row(c.csvID_kategori, category)
-    baris_releaseYear = all_valid_row(c.csvID_releaseYear, releaseYear)
+    baris_id = all_valid_row(data_game, c.csvID_id, id)
+    baris_nama = all_valid_row(data_game, c.csvID_nama, nama)
+    baris_price = all_valid_row(data_game, c.csvID_price, price)
+    baris_kategori = all_valid_row(data_game, c.csvID_kategori, category)
+    baris_releaseYear = all_valid_row(data_game, c.csvID_releaseYear, releaseYear)
 
     #Proses pembagian kasus
     if id == "" and nama == "" and price == "" and category == "" and releaseYear == "":
@@ -159,4 +157,4 @@ def search_game_at_store():
         else:
             print(c.s_notFound)
 
-search_game_at_store()
+#search_game_at_store()
