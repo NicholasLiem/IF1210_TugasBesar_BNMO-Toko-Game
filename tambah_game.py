@@ -36,5 +36,3 @@ def tambah_game():
     data_baru = [ID, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4]]
     data_baru = arr.fungsi_append(data_game, data_baru)
     parseran.matrix_to_csv(path, data_baru)
-
-tambah_game()

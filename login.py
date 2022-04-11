@@ -17,6 +17,7 @@ def login():
                 print (f"Halo {item[c.csvID_user_nama]} Selamat datang di Binomo")
                 has_logged_in = True
                 break
+            
     if has_logged_in == False:
         print(c.login_invalid)
         return has_logged_in
