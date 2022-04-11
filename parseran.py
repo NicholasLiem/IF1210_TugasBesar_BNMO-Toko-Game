@@ -25,7 +25,6 @@ def matrix_to_csv(path, matrix):
         for i in range(panjang-1):
             csv.write(arr.join(';', matrix[i]) + '\n')
         csv.write(arr.join(';', matrix[panjang-1]))
-        #??
 
 # print(split_csv('A;B;C'))
 # tambah_data('Data/contoh.csv', 'A;B;C')

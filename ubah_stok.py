@@ -3,8 +3,6 @@ import operasi_array as arr
 import constant as c
 
 #Nicholas
-
-
 dir = "Data/game.csv"
 data_game = parseran.csv_to_matrix(dir)
 
