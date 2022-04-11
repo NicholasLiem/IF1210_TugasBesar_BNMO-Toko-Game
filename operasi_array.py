@@ -47,6 +47,7 @@ def all_valid_row(array,csvID,validator):
     return data_baris
 
 def find_row_id(array, csvID, validator):
+    #Asumsikan bahwa data pasti ada di barisnya
     panjang_baris_data = panjang_baris(array)
     for i in range(1,panjang_baris_data,1):
         if array[i][csvID] == validator:
