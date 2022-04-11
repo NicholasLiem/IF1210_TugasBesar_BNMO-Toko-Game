@@ -3,12 +3,26 @@ u_idGame = "Masukkan ID Game: "
 u_jumlah = "Masukkan jumlah: "
 u_notFound = "Tidak ada game dengan ID tersebut!"
 
-#Bagian Searching
+#Bagian TambahGame
+tg_invalid = "Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO."
+
+#Bagian Login
+login_username = "Masukkan username: "
+login_password = "Masukkan password: "
+login_invalid = "Password atau username salah atau tidak ditentukan."
+
+#Bagian Register
+register_nama = "Masukkan nama: "
+register_username= "Masukkan username"
+register_password= "Masukkan password"
+
+#Bagian
 s_idGame = "Masukkan ID Game: "
 s_nameGame = "Masukkan Nama Game: "
 s_priceGame = "Masukkan Harga Game: "
 s_categoryGame = "Masukkan Kategori Game: "
 s_releaseYear = "Masukkan Tahun Rilis Game: "
+s_firstStock = "Masukkan Stok Awal: "
 s_listing = "Daftar game pada toko yang memenuhi kriteria: "
 s_notFound = "Tidak ada game pada toko yang memenuhi kriteria"
 

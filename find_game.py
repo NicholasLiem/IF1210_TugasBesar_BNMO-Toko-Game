@@ -12,10 +12,10 @@ import parseran
 
 #Konstanta/"Dictionary"
 #Berfungsi untuk mengubah variabel dengan lebih mudah karena "tersimpan" pada satu tempat yang sama
-dir = "Data/game.csv"
+directory = "Data/game.csv"
 
 #Mendifinisikan array yang akan dipakai
-data_game = parseran.csv_to_matrix(dir)
+data_game = parseran.csv_to_matrix(directory)
 #Data-data unik: id, nama
 #Data-data umum: harga, kategori, tahun rilis
 
