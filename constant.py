@@ -12,6 +12,11 @@ s_releaseYear = "Masukkan Tahun Rilis Game: "
 s_listing = "Daftar game pada toko yang memenuhi kriteria: "
 s_notFound = "Tidak ada game pada toko yang memenuhi kriteria"
 
+#Bagian Topup
+t_username = "Masukkan username: "
+t_saldo = "Masukkan saldo: "
+t_invalid = "Masukan tidak valid."
+
 #Bagian Melihat Game
 l_notFound = "Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli."
 l_listing = "Daftar game:"
