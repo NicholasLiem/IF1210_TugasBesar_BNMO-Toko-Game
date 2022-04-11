@@ -46,6 +46,13 @@ def all_valid_row(array,csvID,validator):
             data_baris = fungsi_append(data_baris, baris)
     return data_baris
 
+def find_row_id(array, csvID, validator):
+    panjang_baris_data = panjang_baris(array)
+    for i in range(1,panjang_baris_data,1):
+        if array[i][csvID] == validator:
+            baris_id = i
+    return baris_id
+
 def delete_column(array, columnCSVId):
     panjang_kolom_data = panjang_kolom(array)
     array_without_column = []

@@ -1,3 +1,8 @@
+#Bagian Ubah Stok
+u_idGame = "Masukkan ID Game: "
+u_jumlah = "Masukkan jumlah: "
+u_notFound = "Tidak ada game dengan ID tersebut!"
+
 #Bagian Searching
 s_idGame = "Masukkan ID Game: "
 s_nameGame = "Masukkan Nama Game: "
