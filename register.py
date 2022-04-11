@@ -1,7 +1,10 @@
 import operasi_array as arr
 import parseran
+import constant as c
 
 dir = "Data/user.csv"
+
+
 def register():
     data_user = parseran.csv_to_matrix(dir)
     name = input("Masukkan nama : ")
@@ -9,7 +12,7 @@ def register():
         user_baru=input("Masukkan username: ")
         found = False
         for i in range (arr.panjang_baris(data_user)):
-            if user_baru == data_user[i][1] :
+            if user_baru == data_user[i][c.csvID_user_nama] :
                 found= True
                 break
         if not found:
