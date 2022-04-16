@@ -58,8 +58,8 @@ def exit_program(data_user, data_user_baru, data_game, data_game_baru, data_riwa
         simpan = input('Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)')[0]
         while simpan.lower() != 'y' or simpan.lower() != 'n':
             simpan = input('Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)')[0]
-    if simpan.lower() == 'y':
-        save(data_game=data_game_baru, data_user=data_user_baru, data_riwayat=data_riwayat_baru, data_kepemilikan=data_kepemilikan_baru)
+        if simpan.lower() == 'y':
+            save(data_game=data_game_baru, data_user=data_user_baru, data_riwayat=data_riwayat_baru, data_kepemilikan=data_kepemilikan_baru)
 
 (sukses, data_game, data_user, data_riwayat, data_kepemilikan) = load()
 data_game_baru = arr.copy(data_game)
@@ -74,26 +74,26 @@ if sukses:
     while command != 'login':
         print('Maaf, Anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
         command = input('>>> ')
-    username = login.login(data_user)
+    (username, role) = login.login(data_user)
     while not selesai:
         command = input('>>> ')
         if command == 'exit':
             exit_program(data_user, data_user_baru, data_game, data_game_baru, data_riwayat, data_riwayat_baru, data_kepemilikan, data_kepemilikan_baru)
             selesai = True
         elif command == 'register':
-            if username != 'admin':
+            if role != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_user_baru = register.register(data_user_baru)
         elif command == 'login':
             username = login.login(data_user_baru)
         elif command == 'tambah_game':
-            if username != 'admin':
+            if role != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = tambah_game.tambah_game(data_game_baru)
         elif command == 'ubah_game':
-            if username != 'admin':
+            if role != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = ubah_game.ubah_game(data_game_baru)
