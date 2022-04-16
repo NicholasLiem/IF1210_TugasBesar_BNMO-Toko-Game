@@ -3,9 +3,6 @@ import parseran
 import operasi_array as arr
 import constant as c
 
-path = "Data/game.csv"
-data_game = parseran.csv_to_matrix(path)
-
 def cekinteger(variabel):
     for c in variabel:
         if not(48 <= ord(c) <= 57):
@@ -26,7 +23,7 @@ def masukkan():
     stok = input(c.s_firstStock)
     return nama, kategori, tahun, harga, stok
 
-def tambah_game():
+def tambah_game(data_game):
     inputs = masukkan()
     while not isvalid(inputs) or not ((cekinteger(inputs[2]) and cekinteger(inputs[3]) and cekinteger(inputs[4]))):
         print(c.tg_invalid)
@@ -36,4 +33,5 @@ def tambah_game():
     
     data_baru = [ID, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4]]
     data_baru = arr.fungsi_append(data_game, data_baru)
-    parseran.matrix_to_csv(path, data_baru)
+    # parseran.matrix_to_csv(path, data_baru)
+    return data_baru

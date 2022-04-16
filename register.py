@@ -26,3 +26,4 @@ def register(data_user):
     
     data_baru = arr.fungsi_append(data_user, data_temp)
     #parseran.matrix_to_csv(directory, data_baru)
+    return data_baru

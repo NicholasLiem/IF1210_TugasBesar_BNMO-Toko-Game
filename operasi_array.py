@@ -20,6 +20,12 @@ def fungsi_append(array,s):
             list[i]=s
     return list
 
+def copy(array):
+    tmp = ['' for _ in range(panjang_baris(array))]
+    for i in range(panjang_baris(array)):
+        tmp[i] = array[i]
+    return tmp
+
 def join(s, array_string):
     out = ''
     panjang = panjang_baris(array_string)
