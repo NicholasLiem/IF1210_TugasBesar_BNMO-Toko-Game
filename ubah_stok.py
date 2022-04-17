@@ -14,7 +14,7 @@ def ubah_stok():
     else:
         stock_input = int(input(c.u_jumlah))
         stock_data = int(data_game[row_id][c.csvID_game_stock])
-        nama_game = arr.all_valid_row(data_game, c.csvID_game_id, game_id)[0][c.csvID_game_nama]
+        nama_game = data_game[row_id][c.csvID_game_nama]
         if (stock_input + stock_data) < 0:
             print(f"Stok game {nama_game} gagal dikurangi karena stok kurang. Stok sekarang: {stock_data}")
         elif stock_input >= 0:
