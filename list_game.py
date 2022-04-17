@@ -16,9 +16,7 @@ def list_game():
         list_game = []
         game_id_kepemilikan_user = arr.all_valid_row(data_kepemilikan, c.csvID_kepemilikan_user_id, user)
         for item in game_id_kepemilikan_user:
-            list_game = arr.fungsi_append(list_game,arr.all_valid_row(data_game, c.csvID_id, item[c.csvID_kepemilikan_game_id]))
+            list_game = arr.fungsi_append(list_game,arr.all_valid_row(data_game, c.csvID_game_id, item[c.csvID_kepemilikan_game_id]))
         print(c.l_listing)
         for item in list_game:
             print(item)
-
-#123
