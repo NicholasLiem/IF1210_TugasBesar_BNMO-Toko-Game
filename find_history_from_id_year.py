@@ -41,8 +41,6 @@ def search_my_game(data_riwayat, username):
             data_baris_game_id = []
             data_baris_game_without_username = []
 
-        print(data_baris_game_id)
-
         #Kasus pertama mengecek jika input id_game kosong
         #jika tahun yang dimasukkan merupakan bagian dari data_riwayat, maka akan diprint semua data yang berhubungan dengan tahun tsb
         if (id_game == "") and tahun_beli_in_array:
