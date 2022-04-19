@@ -2,7 +2,9 @@ import operasi_array as arr
 import constant as c
 
 def register(data_user, username, role):
-    if role == "admin":
+    if role != "admin":
+        print(c.error_hanya_admin)
+    else:
         name = input(c.register_nama)
         while True:
             user_baru=input(c.register_username)
@@ -26,5 +28,3 @@ def register(data_user, username, role):
         
         data_baru = arr.fungsi_append(data_user, data_temp)
         return data_baru
-    else:
-        print("Kamu bukan admin!")
