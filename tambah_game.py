@@ -8,12 +8,6 @@ def cekinteger(variabel):
             return False
     return True 
 
-def isvalid(inputs):
-    for i in range(5):
-        if inputs[i] == "":
-            return False
-    return True
-
 def tambah_game(data_game):
     nama = input(c.s_nameGame)
     kategori = input(c.s_categoryGame)
