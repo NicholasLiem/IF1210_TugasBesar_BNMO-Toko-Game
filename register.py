@@ -1,7 +1,7 @@
 import operasi_array as arr
 import constant as c
 
-def register(data_user, role):
+def register(data_user):
     name = input(c.register_nama)
     while True:
         user_baru=input(c.register_username)
@@ -23,5 +23,5 @@ def register(data_user, role):
 
     print(f"Username {user_baru} telah berhasil register ke dalam Binomo")
     
-    data_baru = arr.fungsi_append(data_user, data_temp)
-    return data_baru
+    data_user = arr.fungsi_append(data_user, data_temp)
+    return data_user
