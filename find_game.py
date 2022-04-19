@@ -6,9 +6,10 @@
 #           Kemudian, berdasarkan input yang diberikan, akan dikeluarkan semua data yang memenuhi input.
 
 #Import modul-modul yang diperlukan
+from pickle import FALSE
 import operasi_array as arr
 import constant as c
-
+import parseran 
 #Data-data unik: id, nama
 #Data-data umum: harga, kategori, tahun rilis
 
@@ -36,64 +37,79 @@ def search_game_at_store(data_game):
     baris_kategori = arr.all_valid_row(data_game, c.csvID_game_kategori, category_game)
     baris_releaseYear = arr.all_valid_row(data_game, c.csvID_game_releaseYear, releaseYear_game)
 
+    checker = [id_game,nama_game,price_game,category_game,releaseYear_game]
+    temp = []
+    found = True
     #Proses pembagian kasus
     if id_game == "" and nama_game == "" and price_game == "" and category_game == "" and releaseYear_game == "":
         for baris in range(1,arr.panjang_baris(data_game)):
             print(data_game[baris])
     else:
         print(c.s_listing)
-        if found_id and found_nama:
-            if baris_id == baris_nama:
+        if found_id :
+            for i in range (4):
+                if baris_id[0][i] == checker[i] or checker[i] == "":
+                    found = True
+                elif checker[i] != "" :
+                    found = False
+            if found == True:
                 print(baris_id)
             else:
-                print(c.s_notFound)
-        elif found_id and nama_game == "":
-            print(baris_id)
-        elif id == "" and found_nama:
-            print(baris_nama)
-
+                print ("not Found")
+        elif found_nama :
+            for i in range (4):
+                if baris_nama[0][i] != checker[i] or checker[i] != "":
+                    found = False
+                
+            if found == True:
+                print(baris_nama)
+            else:
+                print ("not Found")
         #Print semua baris
         #Kasus semua benar
-        elif found_price and found_category and found_releaseYear:
-            if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                array_temp = []
-                for item in baris_price:
-                    for items in baris_kategori:
-                        for itemss in baris_releaseYear:
-                            if item == items == itemss:
-                                array_temp = arr.fungsi_append(array_temp, item)
-                print(array_temp)
-            else:
-                print(c.s_notFound)
+        # elif found_price and found_category and found_releaseYear:
+        #     if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
+        #         array_temp = []
+        #         for item in baris_price:
+        #             for items in baris_kategori:
+        #                 for itemss in baris_releaseYear:
+        #                     if item == items == itemss:
+        #                         array_temp = arr.fungsi_append(array_temp, item)
+        #         print(array_temp)
+        #     else:
+        #         print(c.s_notFound)
 
-        #Kasus 2 benar, satu salah
-        elif found_price and found_category and not found_releaseYear:
-            if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
-                print(arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
-            else:
-                print(c.s_notFound)
+        # #Kasus 2 benar, satu salah
+        # elif found_price and found_category and not found_releaseYear:
+        #     if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
+        #         print(arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
+        #     else:
+        #         print(c.s_notFound)
 
-        elif found_price and not found_category and found_releaseYear:
-            if arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                print(arr.operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
-            else:
-                print(c.s_notFound)
+        # elif found_price and not found_category and found_releaseYear:
+        #     if arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
+        #         print(arr.operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
+        #     else:
+        #         print(c.s_notFound)
 
-        elif not found_price and found_category and found_releaseYear:
-            if arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                print(arr.operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
-            else:
-                print(c.s_notFound)
+        # elif not found_price and found_category and found_releaseYear:
+        #     if arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
+        #         print(arr.operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
+        #     else:
+        #         print(c.s_notFound)
 
-        #Kasus 1 benar, 2 salah
-        elif found_price and not found_category and not found_releaseYear:
-            print(baris_price)
+        # #Kasus 1 benar, 2 salah
+        # elif found_price and not found_category and not found_releaseYear:
+        #     print(baris_price)
 
-        elif not found_price and found_category and not found_releaseYear:
-            print(baris_kategori)
+        # elif not found_price and found_category and not found_releaseYear:
+        #     print(baris_kategori)
 
-        elif not found_price and not found_category and found_releaseYear:
-            print(baris_releaseYear)
+        # elif not found_price and not found_category and found_releaseYear:
+        #     print(baris_releaseYear)
             
-        else:
-            print(c.s_notFound)
+        # else:
+        #     print(c.s_notFound)
+
+dataaa = parseran.csv_to_matrix("Data/game.csv")
+search_game_at_store(dataaa)
