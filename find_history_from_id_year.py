@@ -9,13 +9,8 @@
 #           tetapi jika diberikan id game dan tahun rilisnya sesuai dengan data yang tersimpan, maka akan diberikan data pada spesifiaksi tersebut.
 
 #Import modul-modul yang diperlukan
-
-
 import operasi_array as arr
-import parseran
 import constant as c
-
-data_riwayat = parseran.csv_to_matrix("Data/riwayat.csv")
 
 def search_my_game(data_riwayat, username):
     #seach_my_game() merupakan fungsi utama dalam modul ini. Fungsi ini menerima input (id_game atau tahun_beli atau tidak keduanya) 
@@ -72,5 +67,3 @@ def search_my_game(data_riwayat, username):
     else: #(id_game == "") and (tahun_beli == ""). Sesuai arahan, jika tidak ada input untuk id_game dan tahun_beli maka akan diberikan
         #semua data riwayat yang dimiliki user.
         arr.cetak_tabel(data_riwayat_user)
-
-search_my_game(data_riwayat, "user")

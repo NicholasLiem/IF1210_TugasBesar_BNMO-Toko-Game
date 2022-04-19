@@ -1,5 +1,4 @@
 import operasi_array as arr
-import parseran
 import constant as c
 
 def register(data_user):

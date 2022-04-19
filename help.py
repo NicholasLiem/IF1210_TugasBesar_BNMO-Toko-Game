@@ -1,13 +1,7 @@
-import operasi_array as arr
-import parseran
-import constant as c
-
-# dir = "Data/user.csv"
-# data_user = parseran.csv_to_matrix(dir)
+import return_role as rr
 
 def help(data_user,username):
-    row_id = arr.find_row_id(data_user,c.csvID_user_username,username)
-    role = data_user[row_id][c.csvID_user_role]
+    role = rr.return_role(data_user, username)
     if role == "admin":
         print("============ HELP ============")
         print("1. register - Untuk melakukan registrasi user baru")
@@ -18,4 +12,3 @@ def help(data_user,username):
         print("============ HELP ============")
         print("1. login - Untuk melakukan login ke dalam sistem")
         print("2. list_game_toko - Untuk melihat list game yang dijual pada toko")
-

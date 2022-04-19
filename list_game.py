@@ -1,20 +1,16 @@
 import operasi_array as arr
-import parseran
 import constant as c
 
-dir = "Data/kepemilikan.csv"
-data_kepemilikan = parseran.csv_to_matrix(dir)
-data_game = parseran.csv_to_matrix("Data/game.csv")
-
-def list_game():
-    user = input("Login session user: ")
-    if not(arr.found_in_kolom(data_kepemilikan, c.csvID_kepemilikan_user_id, user)):
+def list_game(data_game, data_kepemilikan, username):
+    if not(arr.found_in_kolom(data_kepemilikan, c.csvID_kepemilikan_user_id, username)):
         print(c.l_notFound)
     else:
         list_game = []
-        game_id_kepemilikan_user = arr.all_valid_row(data_kepemilikan, c.csvID_kepemilikan_user_id, user)
+        game_id_kepemilikan_user = arr.all_valid_row(data_kepemilikan, c.csvID_kepemilikan_user_id, username)
         for item in game_id_kepemilikan_user:
-            list_game = arr.fungsi_append(list_game,arr.all_valid_row(data_game, c.csvID_game_id, item[c.csvID_kepemilikan_game_id]))
+            game_id = item[c.csvID_kepemilikan_game_id]
+            row_id = arr.find_row_id(data_game, c.csvID_game_id, game_id)
+            list_game = arr.fungsi_append(list_game, data_game[row_id])
+
         print(c.l_listing)
-        for item in list_game:
-            print(item)
+        arr.cetak_tabel(list_game)
