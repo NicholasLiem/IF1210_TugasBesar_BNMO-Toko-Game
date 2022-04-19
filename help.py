@@ -1,7 +1,4 @@
-import return_role as rr
-
-def help(data_user,username):
-    role = rr.return_role(data_user, username)
+def help(role):
     if role == "admin":
         print("============ HELP ============")
         print("1. register - Untuk melakukan registrasi user baru")

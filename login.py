@@ -6,7 +6,6 @@ import parseran
 # data_user = parseran.csv_to_matrix(directory)
 
 def login(data_user):
-
     username=input(c.login_username)
     password=input(c.login_password)
     
