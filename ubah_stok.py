@@ -1,4 +1,3 @@
-import parseran
 import operasi_array as arr
 import constant as c
 

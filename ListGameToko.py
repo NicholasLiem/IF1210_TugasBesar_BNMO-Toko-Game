@@ -1,6 +1,3 @@
-
-
-
 sortir=input()#input skema sorting yang diinginkan
 sortir.lower()#seragamkan huruf menjadi huruf kecil
 

@@ -11,6 +11,5 @@ def list_game(data_game, data_kepemilikan, username):
             game_id = item[c.csvID_kepemilikan_game_id]
             row_id = arr.find_row_id(data_game, c.csvID_game_id, game_id)
             list_game = arr.fungsi_append(list_game, data_game[row_id])
-
         print(c.l_listing)
         arr.cetak_tabel(list_game)

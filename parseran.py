@@ -26,8 +26,6 @@ def matrix_to_csv(path, matrix):
             csv.write(arr.join(';', matrix[i]) + '\n')
         csv.write(arr.join(';', matrix[panjang-1]))
 
-# print(split_csv('A;B;C'))
-# tambah_data('Data/contoh.csv', 'A;B;C')
 def csv_to_matrix(path):
     with open(path) as csv:
         lines = csv.readlines()
@@ -35,4 +33,3 @@ def csv_to_matrix(path):
         for line in lines:
             matrix = arr.fungsi_append(matrix, split_csv(line))
     return matrix
-# print(matrix)

@@ -1,5 +1,4 @@
 #10 april 2022
-import parseran
 import operasi_array as arr
 import constant as c
 
