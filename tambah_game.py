@@ -22,18 +22,15 @@ def masukkan():
     stok = input(c.s_firstStock)
     return nama, kategori, tahun, harga, stok
 
-def tambah_game(data_game, role):
-    if role != "admin":
-        print(c.error_hanya_admin)
-    else:
+def tambah_game(data_game):
+    inputs = masukkan()
+    while not isvalid(inputs) or not ((cekinteger(inputs[2]) and cekinteger(inputs[3]) and cekinteger(inputs[4]))):
+        print(c.tg_invalid)
         inputs = masukkan()
-        while not isvalid(inputs) or not ((cekinteger(inputs[2]) and cekinteger(inputs[3]) and cekinteger(inputs[4]))):
-            print(c.tg_invalid)
-            inputs = masukkan()
-        
-        ID = "GAME{:04}".format((arr.panjang_baris(data_game)))
-        
-        data_baru = [ID, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4]]
-        data_baru = arr.fungsi_append(data_game, data_baru)
-        return data_baru
+    
+    ID = "GAME{:04}".format((arr.panjang_baris(data_game)))
+    
+    data_baru = [ID, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4]]
+    data_baru = arr.fungsi_append(data_game, data_baru)
+    return data_baru
 
