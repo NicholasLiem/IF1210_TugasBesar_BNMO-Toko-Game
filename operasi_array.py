@@ -105,3 +105,9 @@ def cetak_tabel(matrix):
                 print("|{0:<{width}}".format(matrix[i][j], width=max_width[j]), end='')
         print('|')
     print(pemisah)
+
+def cekinteger(variabel):
+    for c in variabel:
+        if not(48 <= ord(c) <= 57):
+            return False
+    return True
