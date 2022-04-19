@@ -14,19 +14,22 @@ def isvalid(inputs):
             return False
     return True
 
-def masukkan():
+def tambah_game(data_game):
     nama = input(c.s_nameGame)
     kategori = input(c.s_categoryGame)
     tahun = input(c.s_releaseYear)
     harga = input(c.s_priceGame)
     stok = input(c.s_firstStock)
-    return nama, kategori, tahun, harga, stok
 
-def tambah_game(data_game):
-    inputs = masukkan()
-    while not isvalid(inputs) or not ((cekinteger(inputs[2]) and cekinteger(inputs[3]) and cekinteger(inputs[4]))):
+    is_valid = (nama != "") and (kategori != "") and (tahun != "") and (harga != "") and (stok != "")
+
+    while not is_valid or not ((cekinteger(tahun) and cekinteger(harga) and cekinteger(stok))):
         print(c.tg_invalid)
-        inputs = masukkan()
+        nama = input(c.s_nameGame)
+        kategori = input(c.s_categoryGame)
+        tahun = input(c.s_releaseYear)
+        harga = input(c.s_priceGame)
+        stok = input(c.s_firstStock)
     
     ID = "GAME{:04}".format((arr.panjang_baris(data_game)))
     
