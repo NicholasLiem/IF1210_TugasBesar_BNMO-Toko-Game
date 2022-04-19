@@ -6,30 +6,13 @@
 #           Kemudian, berdasarkan input yang diberikan, akan dikeluarkan semua data yang memenuhi input.
 
 #Import modul-modul yang diperlukan
-import operasi_array as arr
+import operasi_dua_array as arr
 import constant as c
-
 
 #Data-data unik: id, nama
 #Data-data umum: harga, kategori, tahun rilis
 
 #Multipurpose array
-def operasi_array(array1, array2, operator):
-    array_sama = []
-    found = False
-    if operator == "CHECK_IF_CONSISTS":
-        for item1 in array1:
-            for item2 in array2:
-                if item1 == item2:
-                    found = True
-        return found
-
-    elif operator == "RETURN_SAME":
-        for item1 in array1:
-            for item2 in array2:
-                if item1 == item2:
-                    array_sama = arr.fungsi_append(array_sama,item1)
-        return array_sama
 
 def search_game_at_store(data_game):
 
@@ -73,7 +56,7 @@ def search_game_at_store(data_game):
         #Print semua baris
         #Kasus semua benar
         elif found_price and found_category and found_releaseYear:
-            if operasi_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and operasi_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and operasi_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
+            if operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
                 array_temp = []
                 for item in baris_price:
                     for items in baris_kategori:
@@ -86,20 +69,20 @@ def search_game_at_store(data_game):
 
         #Kasus 2 benar, satu salah
         elif found_price and found_category and not found_releaseYear:
-            if operasi_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
-                print(operasi_array(baris_price, baris_kategori, "RETURN_SAME"))
+            if operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
+                print(operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
             else:
                 print(c.s_notFound)
 
         elif found_price and not found_category and found_releaseYear:
-            if operasi_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                print(operasi_array(baris_price, baris_releaseYear, "RETURN_SAME"))
+            if operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
+                print(operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
             else:
                 print(c.s_notFound)
 
         elif not found_price and found_category and found_releaseYear:
-            if operasi_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                print(operasi_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
+            if operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
+                print(operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
             else:
                 print(c.s_notFound)
 

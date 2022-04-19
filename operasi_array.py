@@ -111,3 +111,20 @@ def cekinteger(variabel):
         if not(48 <= ord(c) <= 57):
             return False
     return True
+
+def operasi_dua_array(array1, array2, operator):
+    array_sama = []
+    found = False
+    if operator == "CHECK_IF_CONSISTS":
+        for item1 in array1:
+            for item2 in array2:
+                if item1 == item2:
+                    found = True
+        return found
+
+    elif operator == "RETURN_SAME":
+        for item1 in array1:
+            for item2 in array2:
+                if item1 == item2:
+                    array_sama = fungsi_append(array_sama,item1)
+        return array_sama
