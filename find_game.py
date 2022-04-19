@@ -6,14 +6,13 @@
 #           Kemudian, berdasarkan input yang diberikan, akan dikeluarkan semua data yang memenuhi input.
 
 #Import modul-modul yang diperlukan
-import operasi_dua_array as arr
+import operasi_array as arr
 import constant as c
 
 #Data-data unik: id, nama
 #Data-data umum: harga, kategori, tahun rilis
 
 #Multipurpose array
-
 def search_game_at_store(data_game):
 
     #Bagian input data
