@@ -55,7 +55,7 @@ def search_game_at_store(data_game):
         #Print semua baris
         #Kasus semua benar
         elif found_price and found_category and found_releaseYear:
-            if operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
+            if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
                 array_temp = []
                 for item in baris_price:
                     for items in baris_kategori:
@@ -68,20 +68,20 @@ def search_game_at_store(data_game):
 
         #Kasus 2 benar, satu salah
         elif found_price and found_category and not found_releaseYear:
-            if operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
-                print(operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
+            if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
+                print(arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
             else:
                 print(c.s_notFound)
 
         elif found_price and not found_category and found_releaseYear:
-            if operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                print(operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
+            if arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
+                print(arr.operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
             else:
                 print(c.s_notFound)
 
         elif not found_price and found_category and found_releaseYear:
-            if operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                print(operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
+            if arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
+                print(arr.operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
             else:
                 print(c.s_notFound)
 
