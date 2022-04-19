@@ -27,7 +27,7 @@ def tambah_game(data_game):
     
     ID = "GAME{:04}".format((arr.panjang_baris(data_game)))
     
-    data_baru = [ID, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4]]
+    data_baru = [ID, nama, kategori, tahun, harga, stok]
     data_baru = arr.fungsi_append(data_game, data_baru)
     return data_baru
 
