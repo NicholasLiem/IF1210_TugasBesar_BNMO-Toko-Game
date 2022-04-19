@@ -24,7 +24,7 @@ s_categoryGame = "Masukkan Kategori Game: "
 s_releaseYear = "Masukkan Tahun Rilis Game: "
 s_firstStock = "Masukkan Stok Awal: "
 s_listing = "Daftar game pada toko yang memenuhi kriteria: "
-s_notFound = "Tidak ada game pada toko yang memenuhi kriteria"
+s_notFound = "Tidak ada game kamu yang memenuhi kriteria"
 
 #Bagian Topup
 t_username = "Masukkan username: "
@@ -51,8 +51,8 @@ csvID_game_stock = 5
 csvID_riwayat_game_id = 0
 csvID_riwayat_nama = 1
 csvID_riwayat_harga = 2
-csvID_riwayat_user_id = 3
-csvID_riwayat_tahun_beli = 4 
+csvID_riwayat_username = 3
+csvID_riwayat_tahun_beli = 4
 
 #ID Kolom | kepemilikan.csv
 csvID_kepemilikan_game_id = 0

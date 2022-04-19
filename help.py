@@ -2,15 +2,13 @@ import operasi_array as arr
 import parseran
 import constant as c
 
-dir = "Data/user.csv"
-data_user = parseran.csv_to_matrix(dir)
+# dir = "Data/user.csv"
+# data_user = parseran.csv_to_matrix(dir)
 
-def help():
-    username = input("Masukkan user: ")
-    #username harusnya di dapet dari login session
+def help(data_user,username):
     row_id = arr.find_row_id(data_user,c.csvID_user_username,username)
-    permission = data_user[row_id][c.csvID_user_role]
-    if permission == "admin":
+    role = data_user[row_id][c.csvID_user_role]
+    if role == "admin":
         print("============ HELP ============")
         print("1. register - Untuk melakukan registrasi user baru")
         print("2. login - Untuk melakukan login ke dalam sistem")

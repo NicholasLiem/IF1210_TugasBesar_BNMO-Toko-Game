@@ -8,8 +8,6 @@ data_game = parseran.csv_to_matrix("Data/game.csv")
 
 def list_game():
     user = input("Login session user: ")
-    #usernya harusnya diambil dari login sessionnya. tapi strukturnya harusnya udah jadi.
-    #Login session, user.
     if not(arr.found_in_kolom(data_kepemilikan, c.csvID_kepemilikan_user_id, user)):
         print(c.l_notFound)
     else:

@@ -25,5 +25,4 @@ def register(data_user):
     print(f"Username {user_baru} telah berhasil register ke dalam Binomo")
     
     data_baru = arr.fungsi_append(data_user, data_temp)
-    #parseran.matrix_to_csv(directory, data_baru)
     return data_baru

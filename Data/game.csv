@@ -1,2 +1,4 @@
 id;nama;kategori;tahun_rilis;harga;stok
 GAME0001;A;A;A;A;1000
+GAME0002;Halo;FPS;2003;100000;10
+GAME0003;Minecraft;Block;2004;300000;10

@@ -47,6 +47,8 @@ def found_in_kolom(array,kolom_id,validator):
 
 def all_valid_row(array,csvID,validator):
     data_baris = []
+    if array == []:
+        return []
     for baris in array:
         if baris[csvID] == validator:
             data_baris = fungsi_append(data_baris, baris)
@@ -70,3 +72,35 @@ def delete_column(array, columnCSVId):
                 baris_temp = fungsi_append(baris_temp,item[i])
         array_without_column = fungsi_append(array_without_column, baris_temp)
     return array_without_column
+
+def max_in_row(matrix, index, context):
+    maks = matrix[index][0]
+    for i in range(panjang_kolom(matrix)):
+        if context(maks) < context(matrix[index][i]):
+            maks = matrix[index][i]
+    return maks
+
+def max_in_column(matrix, index, context):
+    maks = matrix[0][index]
+    for i in range(panjang_baris(matrix)):
+        if context(maks) < context(matrix[i][index]):
+            maks = matrix[i][index]
+    return maks
+
+def cetak_tabel(matrix):
+    kolom = panjang_kolom(matrix)
+    baris = panjang_baris(matrix)
+    max_width = [0 for x in range(kolom)]
+    pemisah = '+'
+    for i in range(kolom):
+        max_width[i] = panjang_baris(max_in_column(matrix, i, panjang_baris))
+        pemisah += '-' * max_width[i] + '+'
+    for i in range(baris):
+        print(pemisah)
+        for j in range(kolom):
+            if i == 0:
+                print("|\x1b[1m{0:^{width}}\x1b[0m".format(matrix[i][j], width=max_width[j]), end='')                
+            else:
+                print("|{0:<{width}}".format(matrix[i][j], width=max_width[j]), end='')
+        print('|')
+    print(pemisah)

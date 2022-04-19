@@ -25,4 +25,3 @@ def ubah_stok():
             new_stock_data = stock_data + stock_input
             data_game[row_id][c.csvID_game_stock] = str(new_stock_data)
             print(f"Stok game {nama_game} berhasil dikurangi. Stok sekarang: {new_stock_data}")
-    #Kalau savenya di akhir, parseran.matrix_to_csv(dir, data_game)
