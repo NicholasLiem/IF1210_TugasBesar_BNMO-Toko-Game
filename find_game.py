@@ -1,13 +1,13 @@
 #Penulis Modul: Nicholas Liem - 16521108
 #Judul Modul: Find Game
-#Versi Modul: 1.0
-#Tanggal: 10 April 2022
+#Tanggal: 20 April 2022
 #Deskripsi: Mencari data game diberikan input (opsional) id, nama, kategori, releaseYear, price, dan stock.
 #           Kemudian, berdasarkan input yang diberikan, akan dikeluarkan semua data yang memenuhi input.
 
 #Import modul-modul yang diperlukan
 import operasi_array as arr
 import constant as c
+
 #Data-data unik: id, nama
 #Data-data umum: harga, kategori, tahun rilis
 
@@ -73,38 +73,41 @@ def search_game_at_store(data_game):
                             for itemss in baris_releaseYear:
                                 if item == items == itemss:
                                     array_temp = arr.fungsi_append(array_temp, item)
-                    print(array_temp)
+                    arr.cetak_tabel(array_temp)
                 else:
                     print(c.s_notFound)
 
             # #Kasus 2 benar, satu salah
             elif found_price and found_category and not found_releaseYear:
                 if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
-                    print(arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
+                    arr.cetak_tabel(arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
                 else:
                     print(c.s_notFound)
 
             elif found_price and not found_category and found_releaseYear:
                 if arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                    print(arr.operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
+                    arr.cetak_tabel(arr.operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
                 else:
                     print(c.s_notFound)
 
             elif not found_price and found_category and found_releaseYear:
                 if arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                    print(arr.operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
+                    arr.cetak_tabel(arr.operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
                 else:
                     print(c.s_notFound)
 
             # #Kasus 1 benar, 2 salah
             elif found_price and not found_category and not found_releaseYear:
-                print(baris_price)
+                arr.cetak_tabel(baris_price)
 
             elif not found_price and found_category and not found_releaseYear:
-                print(baris_kategori)
+                arr.cetak_tabel(baris_kategori)
 
             elif not found_price and not found_category and found_releaseYear:
-                print(baris_releaseYear)
+                arr.cetak_tabel(baris_releaseYear)
                 
             else:
                 print(c.s_notFound)
+
+import parseran
+search_game_at_store(parseran.csv_to_matrix("Data/game.csv"))
