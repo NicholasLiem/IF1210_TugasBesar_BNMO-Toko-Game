@@ -13,6 +13,7 @@ def riwayat(data_riwayat, username):
     else:
 
         list_riwayat = arr.all_valid_row(data_riwayat, c.csvID_riwayat_username, username)
+        
         #Fungsi delete_column mengembalikan array tanpa kolom yang di minta.
         riwayat_tanpa_id = arr.delete_column(list_riwayat, c.csvID_riwayat_username)
         
