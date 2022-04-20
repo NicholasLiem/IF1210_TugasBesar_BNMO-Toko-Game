@@ -68,3 +68,4 @@ csvID_user_saldo = 5
 
 # Bagian main program
 error_hanya_admin = 'Maaf, Anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk menjalankan hal tersebut.'
+error_hanya_user = 'Maaf, Anda harus menjadi user untuk melakukan hal tersebut.'

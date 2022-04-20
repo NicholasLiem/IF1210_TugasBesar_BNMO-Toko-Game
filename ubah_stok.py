@@ -21,3 +21,4 @@ def ubah_stok(data_game):
             new_stock_data = stock_data + stock_input
             data_game[row_id][c.csvID_game_stock] = str(new_stock_data)
             print(f"Stok game {nama_game} berhasil dikurangi. Stok sekarang: {new_stock_data}")
+        return data_game
