@@ -23,5 +23,6 @@ def tambah_game(data_game):
     
     data_baru = [ID, nama, kategori, tahun, harga, stok]
     data_game = arr.fungsi_append(data_game, data_baru)
+    
     print(f"Selamat! Berhasil menambahkan game {nama}.")
     return data_game

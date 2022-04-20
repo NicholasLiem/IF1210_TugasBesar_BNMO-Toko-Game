@@ -7,7 +7,7 @@ import ubah_stok
 import list_game_toko
 # import buy_game
 import list_game
-import find_history_from_id_year
+import search_my_game
 import find_game
 import topup
 import riwayat
@@ -47,13 +47,16 @@ if sukses:
                 print(c.error_hanya_admin)
             else:
                 data_user_baru = register.register(data_user_baru)
+
         elif command == 'login':
             username = login.login(data_user_baru)
+            
         elif command == 'tambah_game':
             if role != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = tambah_game.tambah_game(data_game_baru)
+
         elif command == 'ubah_game':
             if role != 'admin':
                 print(c.error_hanya_admin)
@@ -77,7 +80,7 @@ if sukses:
             if role != 'user':
                 print(c.error_hanya_user)
             else:
-                find_history_from_id_year.search_my_game(data_riwayat_baru, username)
+                search_my_game.search_my_game(data_riwayat_baru, username)
         elif command == 'search_game_at_store':
             find_game.search_game_at_store(data_game_baru)
         elif command == 'topup':

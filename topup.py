@@ -1,3 +1,7 @@
+#Penulis Modul: Nicholas Liem - 16521108
+#Judul Modul: Top-up
+#Tanggal: 19 April 2022
+
 import operasi_array as arr
 import constant as c
 

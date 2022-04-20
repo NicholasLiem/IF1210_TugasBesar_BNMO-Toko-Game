@@ -1,3 +1,7 @@
+#Penulis Modul: Moch. Sofyan Firdaus (16521144), Nicholas Liem (16521108)
+#Judul Modul: Help
+#Tanggal: 19 April 2022
+
 def help(role):
     if role == "admin":
         print("============ HELP ============")

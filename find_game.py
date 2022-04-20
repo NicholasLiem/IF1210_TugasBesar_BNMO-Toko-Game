@@ -4,14 +4,11 @@
 #Deskripsi: Mencari data game diberikan input (opsional) id, nama, kategori, releaseYear, price, dan stock.
 #           Kemudian, berdasarkan input yang diberikan, akan dikeluarkan semua data yang memenuhi input.
 
-#Import modul-modul yang diperlukan
 import operasi_array as arr
 import constant as c
 
 #Data-data unik: id, nama
 #Data-data umum: harga, kategori, tahun rilis
-
-#Multipurpose array
 def search_game_at_store(data_game):
 
     #Bagian input data
@@ -38,12 +35,15 @@ def search_game_at_store(data_game):
     array_input = [id_game,nama_game,category_game,releaseYear_game, price_game]
 
     flag = False
+
     #Proses pembagian kasus
     if id_game == "" and nama_game == "" and price_game == "" and category_game == "" and releaseYear_game == "":
         arr.cetak_tabel(data_game)
 
     else:
         print(c.s_listing)
+
+        #Kasus game_id yang diinput benar, kalau sisanya salah, maka tidak akan dikeluarkan data
         if found_id:
             for i in range (4):
                 if (data_game[row_id][i] != array_input[i]) and array_input[i] != "":
@@ -53,6 +53,7 @@ def search_game_at_store(data_game):
             else:
                 print(c.s_notFound)
 
+        #Kasus nama game yang diinput benar, kalau sisanya salah, maka tidak akan dikeluarkan data
         elif found_nama:
             for i in range (4):
                 if data_game[row_nama][i] != array_input[i] and array_input[i] != "":
@@ -62,8 +63,7 @@ def search_game_at_store(data_game):
             else:
                 print (c.s_notFound)
 
-        #Print semua baris
-        #Kasus semua benar
+        #Kasus tiga parameter semua benar
         else:
             if found_price and found_category and found_releaseYear:
                 if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
@@ -77,7 +77,7 @@ def search_game_at_store(data_game):
                 else:
                     print(c.s_notFound)
 
-            # #Kasus 2 benar, satu salah
+            #Kasus 2 benar, satu salah
             elif found_price and found_category and not found_releaseYear:
                 if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
                     arr.cetak_tabel(arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
@@ -96,7 +96,7 @@ def search_game_at_store(data_game):
                 else:
                     print(c.s_notFound)
 
-            # #Kasus 1 benar, 2 salah
+            #Kasus 1 benar, 2 salah
             elif found_price and not found_category and not found_releaseYear:
                 arr.cetak_tabel(baris_price)
 
@@ -108,6 +108,3 @@ def search_game_at_store(data_game):
                 
             else:
                 print(c.s_notFound)
-
-import parseran
-search_game_at_store(parseran.csv_to_matrix("Data/game.csv"))
