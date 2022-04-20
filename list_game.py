@@ -1,6 +1,6 @@
 #Penulis Modul: Nicholas Liem - 16521108
 #Judul Modul: List Game
-#Tanggal: 20 April 2022
+#Tanggal: 10 April 2022
 
 import operasi_array as arr
 import constant as c

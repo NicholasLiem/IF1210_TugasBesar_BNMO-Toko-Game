@@ -1,6 +1,6 @@
 #Penulis Modul: Nicholas Liem - 16521108
 #Judul Modul: Riwayat
-#Tanggal: 19 April 2022
+#Tanggal: 9 April 2022
 
 import operasi_array as arr
 import constant as c

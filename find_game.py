@@ -1,6 +1,6 @@
 #Penulis Modul: Nicholas Liem - 16521108
 #Judul Modul: Find Game
-#Tanggal: 20 April 2022
+#Tanggal: 10 April 2022
 #Deskripsi: Mencari data game diberikan input (opsional) id, nama, kategori, releaseYear, price, dan stock.
 #           Kemudian, berdasarkan input yang diberikan, akan dikeluarkan semua data yang memenuhi input.
 

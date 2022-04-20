@@ -1,4 +1,7 @@
-#Fungsi dan prosedur
+#Penulis Modul: Moch. Sofyan Firdaus - 16521144, Nicholas Liem - 16521108, Darren - 16521063
+#Judul Modul: Operasi Array
+#Tanggal: 9 April 2022
+
 def panjang_baris(array_data):
     panjangBaris = 0
     for baris in array_data:

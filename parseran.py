@@ -1,3 +1,7 @@
+#Penulis Modul: Moch. Sofyan Firdaus (16521144)
+#Judul Modul: Parseran
+#Tanggal: 9 April 2022
+
 import operasi_array as arr
 
 def split_csv(line):

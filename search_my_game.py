@@ -1,6 +1,6 @@
 #Penulis Modul: Nicholas Liem - 16521108
 #Judul Modul: Find History From Id Year
-#Tanggal: 19 April 2022
+#Tanggal: 15 April 2022
 #Deskripsi: Mencari riyawat game diberikan id game atau tahun rilis atau tidak keduanya.
 #           Jika diberikan id game maka akan diberikan data dari game_id (unik tersebut)
 #           Jika diberikan hanya tahun rilis, maka akan diberikan data semua game yang dibeli pada tahun tersebut

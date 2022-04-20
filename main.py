@@ -1,3 +1,7 @@
+#Penulis Modul: Moch. Sofyan Firdaus (16521144)
+#Judul Modul: Main
+#Tanggal: 19 April 2022
+
 import operasi_array as arr
 import login
 import register
@@ -17,15 +21,6 @@ import save
 import exit_program
 import constant as c
 
-data_user = []
-data_user_baru = []
-data_game = []
-data_game_baru = []
-data_riwayat = []
-data_riwayat_baru = []
-data_kepemilikan = []
-data_kepemilikan_baru = []
-
 (sukses, data_game, data_user, data_riwayat, data_kepemilikan) = load.load()
 data_game_baru = arr.copy(data_game)
 data_user_baru = arr.copy(data_user)
@@ -36,10 +31,13 @@ selesai = False
 
 if sukses:
     command = input('>>> ')
-    while command != 'login':
+    while command != 'login' or command != 'help':
         print('Maaf, Anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
         command = input('>>> ')
-    (username, role) = login.login(data_user)
+    if command == 'login':
+        (username, role) = login.login(data_user)
+    else:
+        help.help('')
     while not selesai:
         command = input('>>> ')
         if command == 'register':
@@ -49,7 +47,7 @@ if sukses:
                 data_user_baru = register.register(data_user_baru)
 
         elif command == 'login':
-            username = login.login(data_user_baru)
+            (username, role) = login.login(data_user_baru)
             
         elif command == 'tambah_game':
             if role != 'admin':
@@ -100,4 +98,3 @@ if sukses:
         elif command == 'exit':
             exit_program.exit_program(data_user, data_user_baru, data_game, data_game_baru, data_riwayat, data_riwayat_baru, data_kepemilikan, data_kepemilikan_baru)
             selesai = True
-            

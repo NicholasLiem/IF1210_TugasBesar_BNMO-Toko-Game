@@ -1,3 +1,7 @@
+#Penulis Modul: Moch. Sofyan Firdaus (16521144)
+#Judul Modul: Save
+#Tanggal: 19 April 2022
+
 import parseran
 import time
 import os

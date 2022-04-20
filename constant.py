@@ -24,7 +24,7 @@ s_categoryGame = "Masukkan Kategori Game: "
 s_releaseYear = "Masukkan Tahun Rilis Game: "
 s_firstStock = "Masukkan Stok Awal: "
 s_listing = "Daftar game pada toko yang memenuhi kriteria: "
-s_notFound = "Tidak ada game kamu yang memenuhi kriteria"
+s_notFound = "Tidak ada game yang memenuhi kriteria"
 
 #Bagian Topup
 t_username = "Masukkan username: "

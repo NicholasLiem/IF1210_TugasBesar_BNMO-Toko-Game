@@ -1,6 +1,6 @@
 #Penulis Modul: Moch. Sofyan Firdaus (16521144), Nicholas Liem (16521108)
 #Judul Modul: Help
-#Tanggal: 19 April 2022
+#Tanggal: 9 April 2022
 
 def help(role):
     if role == "admin":
@@ -13,3 +13,4 @@ def help(role):
         print("============ HELP ============")
         print("1. login - Untuk melakukan login ke dalam sistem")
         print("2. list_game_toko - Untuk melihat list game yang dijual pada toko")
+        print("3. ")
