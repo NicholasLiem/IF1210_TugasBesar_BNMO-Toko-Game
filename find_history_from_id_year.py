@@ -7,13 +7,11 @@
 #           Jika tidak diberikan id game ataupun tahun rilisnya maka akan diberikan seluruh data game yang tersedia
 #           Jika diberikan id game dan tahun rilisnya bersamaan tetapi tidak cocok dengan data yang tersimpan, maka akan diberi pesan kesalahan,
 #           tetapi jika diberikan id game dan tahun rilisnya sesuai dengan data yang tersimpan, maka akan diberikan data pada spesifiaksi tersebut.
-
-#Import modul-modul yang diperlukan
 import operasi_array as arr
 import constant as c
 
 def search_my_game(data_riwayat, username):
-    #seach_my_game() merupakan fungsi utama dalam modul ini. Fungsi ini menerima input (id_game atau tahun_beli atau tidak keduanya) 
+    #seach_my_game() menerima input (id_game atau tahun_beli atau tidak keduanya) 
     #dan mengeluarkan output yang diminta.
 
     id_game = input(c.s_idGame)

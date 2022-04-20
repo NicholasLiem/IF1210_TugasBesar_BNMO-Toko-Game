@@ -3,7 +3,7 @@ import constant as c
 def login(data_user):
     username=input(c.login_username)
     password=input(c.login_password)
-    has_logged_in = False #Keknya harus di main
+    has_logged_in = False
     for item in data_user:
         if item[c.csvID_user_username] == username:
             if item[c.csvID_user_password] == password:

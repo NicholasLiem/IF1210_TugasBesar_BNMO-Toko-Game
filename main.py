@@ -80,6 +80,7 @@ if sukses:
         if command == 'exit':
             exit_program(data_user, data_user_baru, data_game, data_game_baru, data_riwayat, data_riwayat_baru, data_kepemilikan, data_kepemilikan_baru)
             selesai = True
+            
         elif command == 'register':
             if role != 'admin':
                 print(c.error_hanya_admin)
