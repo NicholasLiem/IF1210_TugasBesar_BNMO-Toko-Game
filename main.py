@@ -86,13 +86,16 @@ if sukses:
                 print(c.error_hanya_admin)
             else:
                 data_user_baru = register.register(data_user_baru)
+
         elif command == 'login':
             username = login.login(data_user_baru)
+            
         elif command == 'tambah_game':
             if role != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = tambah_game.tambah_game(data_game_baru)
+
         elif command == 'ubah_game':
             if role != 'admin':
                 print(c.error_hanya_admin)

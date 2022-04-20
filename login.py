@@ -1,3 +1,7 @@
+#Penulis Modul: Darren (16521063)
+#Judul Modul: Find Game
+#Tanggal: 20 April 2022
+
 import constant as c
 
 def login(data_user):
