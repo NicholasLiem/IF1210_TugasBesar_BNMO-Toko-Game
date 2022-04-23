@@ -31,10 +31,13 @@ def ubah_game(data_game):
             new_price = input(c.s_priceGame)
 
         #Jika input atribut dikosongkan, program tidak mengubah atribut tersebut
+        temp = arr.copy(data_game[row_id])
         for i in range(5):
             if new_data[i] != "":
-                data_game[row_id][i] = new_data[i]
-        return data_game
+                temp[i] = new_data[i]
+                data_game[row_id] = temp
 
     else:
         print(c.s_notFound)
+    
+    return data_game

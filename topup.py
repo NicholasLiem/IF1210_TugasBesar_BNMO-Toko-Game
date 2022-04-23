@@ -24,6 +24,8 @@ def topup(data_user):
             print(c.t_invalid)
             
         else: #Username ada dan saldo hasil positif
-            data_user[row_id][c.csvID_user_saldo] = str(new_saldo)
+            temp = arr.copy(data_user[row_id])
+            temp[c.csvID_user_saldo] = str(new_saldo)
+            data_user[row_id] = temp
             print(f"Top up berhasil. Saldo {nama} bertambah menjadi {new_saldo}.")
     return data_user
