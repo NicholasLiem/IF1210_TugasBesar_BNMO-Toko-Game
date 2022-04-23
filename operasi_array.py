@@ -131,3 +131,33 @@ def operasi_dua_array(array1, array2, operator):
                 if item1 == item2:
                     array_sama = fungsi_append(array_sama,item1)
         return array_sama
+
+def sorting_low(array,id):
+    for i in range(2, panjang_baris(array)):
+        Temp_Baris = array[i]
+        Temp_Id = int(array[i][id])
+        Tag = i-1
+        while (Temp_Id < int(array[Tag][id])) and (Tag > 0):
+            array[Tag+1] = array[Tag]
+            Tag -= 1
+        if (Temp_Id >= int(array[Tag][id])):
+            array[Tag+1] = Temp_Baris
+        else:
+            array[Tag+1] = array[Tag]
+            array[Tag] = Temp_Baris
+    return array
+
+def sorting_high(array,id):
+    for i in range(2, panjang_baris(array)):
+        Temp_Baris = array[i]
+        Temp_Id = int(array[i][id])
+        Tag = i-1
+        while (Temp_Id > int(array[Tag][id])) and (Tag > 1):
+            array[Tag+1] = array[Tag]
+            Tag -= 1
+        if (Temp_Id <= int(array[Tag][id])):
+            array[Tag+1] = Temp_Baris
+        else:
+            array[Tag+1] = array[Tag]
+            array[Tag] = Temp_Baris
+    return array

@@ -10,6 +10,8 @@ bg_sudahPunya = "Anda sudah memiliki Game tersebut!"
 bg_saldoTidakCukup = "Saldo anda tidak cukup untuk membeli Game tersebut!"
 bg_stokHabis = "Stok Game tersebut sedang habis!"
 
+#Bagian List Sorting
+sl_skema = "Skema sorting: "
 
 #Bagian TambahGame
 tg_invalid = "Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO."
