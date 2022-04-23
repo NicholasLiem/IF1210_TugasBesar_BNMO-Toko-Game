@@ -18,6 +18,7 @@ def help(role):
         print("10. save - Untuk melakukan penyimpanan data")
         print("11. exit - Untuk keluar dari program")
         print("\n")
+
     elif role == "user":
         print("\n")
         print("============ HELP ============")
@@ -31,6 +32,7 @@ def help(role):
         print("8. save - Untuk melakukan penyimpanan data")
         print("9. exit - Untuk keluar dari program")
         print("\n")
+        
     else:
         print("\n")
         print("============ HELP ============")

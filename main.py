@@ -9,7 +9,7 @@ import tambah_game
 import ubah_game
 import ubah_stok
 import list_game_toko
-# import buy_game
+import buy_game
 import list_game
 import search_my_game
 import find_game
@@ -28,7 +28,6 @@ data_riwayat_baru = arr.copy(data_riwayat)
 data_kepemilikan_baru = arr.copy(data_kepemilikan)
 
 selesai = False
-
 if sukses:
     command = input('>>> ')
     while command != 'login' or command != 'help':
@@ -45,7 +44,6 @@ if sukses:
                 print(c.error_hanya_admin)
             else:
                 data_user_baru = register.register(data_user_baru)
-
         elif command == 'login':
             (username, role) = login.login(data_user_baru)
             
@@ -54,9 +52,46 @@ if sukses:
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = tambah_game.tambah_game(data_game_baru)
-
         elif command == 'ubah_game':
             if role != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = ubah_game.ubah_game(data_game_baru)
+        elif command == 'ubah_stok':
+            if role != 'admin':
+                print(c.error_hanya_admin)
+            else:
+                data_game_baru = ubah_stok.ubah_stok(data_game_baru)
+        elif command == 'list_game':
+            list_game.list_game(data_game_baru, data_kepemilikan_baru, username)
+        elif command == 'buy_game':
+            if role != 'user':
+                print(c.error_hanya_user)
+            else:
+                ...
+        elif command == 'list_game_toko':
+            ...
+        elif command == 'search_my_game':
+            if role != 'user':
+                print(c.error_hanya_user)
+            else:
+                search_my_game.search_my_game(data_riwayat_baru, username)
+        elif command == 'search_game_at_store':
+            find_game.search_game_at_store(data_game_baru)
+        elif command == 'topup':
+            if role != 'admin':
+                print(c.error_hanya_admin)
+            else:
+                topup.topup(data_user_baru)
+        elif command == 'riwayat':
+            if role != 'user':
+                print(c.error_hanya_admin)
+            else:
+                riwayat.riwayat(data_riwayat_baru, username)
+        elif command == 'help':
+            help.help(role)
+        elif command == 'save':
+            save.save(data_game=data_game_baru, data_user=data_user_baru, data_riwayat=data_riwayat_baru, data_kepemilikan=data_kepemilikan_baru)
+        elif command == 'exit':
+            exit_program.exit_program(data_user, data_user_baru, data_game, data_game_baru, data_riwayat, data_riwayat_baru, data_kepemilikan, data_kepemilikan_baru)
+            selesai = True 
