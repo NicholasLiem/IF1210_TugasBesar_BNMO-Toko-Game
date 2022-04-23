@@ -56,3 +56,5 @@ def buy_game(data_game, data_kepemilikan, data_user, data_riwayat, username):
 
     else:
         print(c.bg_notFound)
+
+    return data_user, data_game, data_riwayat, data_kepemilikan
