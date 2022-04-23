@@ -102,10 +102,7 @@ def cetak_tabel(matrix):
     for i in range(baris):
         print(pemisah)
         for j in range(kolom):
-            if i == 0:
-                print("|\x1b[1m{0:^{width}}\x1b[0m".format(matrix[i][j], width=max_width[j]), end='')                
-            else:
-                print("|{0:<{width}}".format(matrix[i][j], width=max_width[j]), end='')
+            print("|{0:<{width}}".format(matrix[i][j], width=max_width[j]), end='')
         print('|')
     print(pemisah)
 
@@ -132,12 +129,12 @@ def operasi_dua_array(array1, array2, operator):
                     array_sama = fungsi_append(array_sama,item1)
         return array_sama
 
-def sorting_low(array,id):
+def sorting_ascd(array,id):
     for i in range(2, panjang_baris(array)):
         Temp_Baris = array[i]
         Temp_Id = int(array[i][id])
         Tag = i-1
-        while (Temp_Id < int(array[Tag][id])) and (Tag > 0):
+        while (Temp_Id < int(array[Tag][id])) and (Tag > 1):
             array[Tag+1] = array[Tag]
             Tag -= 1
         if (Temp_Id >= int(array[Tag][id])):
@@ -147,7 +144,7 @@ def sorting_low(array,id):
             array[Tag] = Temp_Baris
     return array
 
-def sorting_high(array,id):
+def sorting_dscd(array,id):
     for i in range(2, panjang_baris(array)):
         Temp_Baris = array[i]
         Temp_Id = int(array[i][id])

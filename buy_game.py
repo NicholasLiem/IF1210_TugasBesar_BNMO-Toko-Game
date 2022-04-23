@@ -5,7 +5,7 @@
 import operasi_array as arr
 import constant as c
 
-def buy_game(data_game, data_kepemilikan, data_user, data_riwayat, username):
+def buy_game(data_user, data_game, data_riwayat, data_kepemilikan, username):
     user_id = username
     game_id = input(c.bg_idGame)
 
@@ -26,7 +26,7 @@ def buy_game(data_game, data_kepemilikan, data_user, data_riwayat, username):
         harga_game = int(data_row_game_id[c.csvID_game_price])
         stok_game = data_row_game_id[c.csvID_game_stock]
         sudah_punya = arr.found_in_kolom(data_pemilik_game, c.csvID_kepemilikan_user_id, username)
-
+  
         #Kasus sudah dimiliki
         if sudah_punya:
             print(c.bg_sudahPunya)
@@ -35,7 +35,7 @@ def buy_game(data_game, data_kepemilikan, data_user, data_riwayat, username):
             if saldo_user < harga_game:
                 print(c.bg_saldoTidakCukup)
             else: #Kasus tidak memiliki game, saldo user melebihi harga_game
-                if stok_game == 0:
+                if int(stok_game) == 0:
                     print(c.bg_stokHabis)
                 else: #Kasus tidak memiliki game, saldo user melebihi harga game, dan stok lebih dari 0. (Intinya kasus berhasil)
                     #Update saldo

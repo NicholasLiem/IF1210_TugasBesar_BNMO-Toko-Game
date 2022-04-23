@@ -11,13 +11,13 @@ def list_game(data_game, data_kepemilikan, username):
         print(c.l_notFound)
         
     else:
-        list_game = []
+        list_game = [data_game[0]]
         game_id_kepemilikan_user = arr.all_valid_row(data_kepemilikan, c.csvID_kepemilikan_user_id, username)
         
         for item in game_id_kepemilikan_user:
             game_id = item[c.csvID_kepemilikan_game_id]
             row_id = arr.find_row_id(data_game, c.csvID_game_id, game_id)
             list_game = arr.fungsi_append(list_game, data_game[row_id])
-
+            list_game = arr.delete_column(list_game,c.csvID_game_stock)
         print(c.l_listing)
         arr.cetak_tabel(list_game)

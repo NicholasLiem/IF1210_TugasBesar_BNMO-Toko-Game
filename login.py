@@ -22,7 +22,7 @@ def login(data_user, datatemp):
             print(c.login_invalid)
             return(datatemp)
         else:
-            print (f"Halo {[c.csvID_user_nama]} Selamat datang di Binomo")
+            print (f"Halo {data_user[row_user][c.csvID_user_nama]}! Selamat datang di Binomo")
             role = data_user[row_user][c.csvID_user_role]
             has_logged_in = True
             return (username, role, has_logged_in)

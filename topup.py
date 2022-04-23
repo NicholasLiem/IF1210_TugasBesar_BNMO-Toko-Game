@@ -26,3 +26,4 @@ def topup(data_user):
         else: #Username ada dan saldo hasil positif
             data_user[row_id][c.csvID_user_saldo] = str(new_saldo)
             print(f"Top up berhasil. Saldo {nama} bertambah menjadi {new_saldo}.")
+    return data_user

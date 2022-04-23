@@ -32,68 +32,70 @@ data_kepemilikan_baru = arr.copy(data_kepemilikan)
 selesai = False
 if sukses:
     command = input('>>> ')
-    while command != 'login' or command != 'help':
+    while command != 'login' and command != 'help':
         print('Maaf, Anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
         command = input('>>> ')
     if command == 'login':
-        status = login.login(data_user,status)
+        status = login.login(data_user_baru,status)
     else:
         help.help('')
     while not selesai:
         command = input('>>> ')
         if command == 'register':
-            if role != 'admin':
+            if status[1] != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_user_baru = register.register(data_user_baru)
         elif command == 'login':
-            (username, role) = login.login(data_user_baru)
+            status = login.login(data_user_baru,status)
             
         elif command == 'tambah_game':
-            if role != 'admin':
+            if status[1] != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = tambah_game.tambah_game(data_game_baru)
         elif command == 'ubah_game':
-            if role != 'admin':
+            if status[1] != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = ubah_game.ubah_game(data_game_baru)
         elif command == 'ubah_stok':
-            if role != 'admin':
+            if status[1] != 'admin':
                 print(c.error_hanya_admin)
             else:
                 data_game_baru = ubah_stok.ubah_stok(data_game_baru)
         elif command == 'list_game':
-            list_game.list_game(data_game_baru, data_kepemilikan_baru, username)
+            list_game.list_game(data_game_baru, data_kepemilikan_baru, status[0])
         elif command == 'buy_game':
-            if role != 'user':
+            if status[1] != 'user':
                 print(c.error_hanya_user)
             else:
-                ...
+                data_user_baru, data_game_baru, data_riwayat_baru, data_kepemilikan_baru = buy_game.buy_game(data_user_baru, data_game_baru, data_riwayat_baru, data_kepemilikan_baru, status[0])
         elif command == 'list_game_toko':
-            ...
+            list_game_toko.list_game_toko(data_game_baru)
         elif command == 'search_my_game':
-            if role != 'user':
+            if status[1] != 'user':
                 print(c.error_hanya_user)
             else:
-                search_my_game.search_my_game(data_riwayat_baru, username)
+                search_my_game.search_my_game(data_kepemilikan_baru, data_game_baru, status[0])
         elif command == 'search_game_at_store':
             find_game.search_game_at_store(data_game_baru)
         elif command == 'topup':
-            if role != 'admin':
+            if status[1] != 'admin':
                 print(c.error_hanya_admin)
             else:
-                topup.topup(data_user_baru)
+                data_user_baru = topup.topup(data_user_baru)
         elif command == 'riwayat':
-            if role != 'user':
+            if status[1] != 'user':
                 print(c.error_hanya_admin)
             else:
-                riwayat.riwayat(data_riwayat_baru, username)
+                riwayat.riwayat(data_riwayat_baru, status[0])
         elif command == 'help':
-            help.help(role)
+            help.help(status[1])
         elif command == 'save':
             save.save(data_game=data_game_baru, data_user=data_user_baru, data_riwayat=data_riwayat_baru, data_kepemilikan=data_kepemilikan_baru)
         elif command == 'exit':
             exit_program.exit_program(data_user, data_user_baru, data_game, data_game_baru, data_riwayat, data_riwayat_baru, data_kepemilikan, data_kepemilikan_baru)
             selesai = True 
+        else:
+            print(f"Tidak ada perintah {command}!")

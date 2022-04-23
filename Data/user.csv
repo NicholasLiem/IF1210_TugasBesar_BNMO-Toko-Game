@@ -1,2 +1,5 @@
 id;username;nama;password;role;saldo
-1;admin;Admin;password;admin;0
+1;admin;Admin;password;admin;100000
+2;password;user;password;user;1000000
+3;Darren;Darren;password123;user;431000
+4;user_baru;user_baru;binomo123;user;0

@@ -12,6 +12,7 @@ bg_stokHabis = "Stok Game tersebut sedang habis!"
 
 #Bagian List Sorting
 sl_skema = "Skema sorting: "
+sl_invalid = "Skema sorting tidak valid!"
 
 #Bagian TambahGame
 tg_invalid = "Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO."
@@ -23,8 +24,8 @@ login_invalid = "Password atau username salah atau tidak ditentukan."
 
 #Bagian Register
 register_nama = "Masukkan nama: "
-register_username= "Masukkan username"
-register_password= "Masukkan password"
+register_username= "Masukkan username: "
+register_password= "Masukkan password: "
 
 #Bagian
 s_idGame = "Masukkan ID Game: "
@@ -33,7 +34,7 @@ s_priceGame = "Masukkan Harga Game: "
 s_categoryGame = "Masukkan Kategori Game: "
 s_releaseYear = "Masukkan Tahun Rilis Game: "
 s_firstStock = "Masukkan Stok Awal: "
-s_listing = "Daftar game pada toko yang memenuhi kriteria: "
+s_listing = "Daftar game yang memenuhi kriteria: "
 s_notFound = "Tidak ada game yang memenuhi kriteria"
 
 #Bagian Topup
@@ -42,11 +43,11 @@ t_saldo = "Masukkan saldo: "
 t_invalid = "Masukan tidak valid."
 
 #Bagian Melihat Game
-l_notFound = "Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli."
+l_notFound = "Maaf, kamu belum membeli game. Ketik perintah buy_game untuk beli."
 l_listing = "Daftar game:"
 
 #Bagian riwayat
-r_notFound = "Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah beli_game untuk membeli."
+r_notFound = "Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah buy_game untuk membeli."
 r_listing = "Daftar game:"
 
 #ID kolom | game.csv

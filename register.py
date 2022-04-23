@@ -14,7 +14,7 @@ def register(data_user):
         found = False
         for item in data_user:
             #jika ditemukan username yang sama pada data csv maka akan dicetak pemberitahuan di line 23
-            if user_baru == item[c.csvID_user_username] :
+            if user_baru == item[c.csvID_user_username] or user_baru == "" :
                 found= True
                 break
         if not found:
@@ -24,6 +24,10 @@ def register(data_user):
 
     #input password
     password = input(c.register_password)
+    if password == "" :
+        print ("Password tidak boleh kosong")
+        return data_user
+    
     #role secara otomatis menjadi user
     role = "user" 
     balance= "0"
