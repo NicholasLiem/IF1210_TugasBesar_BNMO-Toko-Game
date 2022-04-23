@@ -44,10 +44,10 @@ def buy_game(data_game, data_kepemilikan, data_user, data_riwayat, username):
                     #Update stok
                     data_game[row_game_id][c.csvID_game_stock] = str(int(data_game[row_game_id][c.csvID_game_stock]) - 1) #update stok game
 
-                    #Bagian update kepemilikan
+                    # Bagian update kepemilikan
                     data_kepemilikan = arr.fungsi_append(data_kepemilikan, [game_id,user_id])
                     
-                    # Bagian update_riwayat
+                    # Bagian update riwayat
                     nama_game = data_game[row_game_id][c.csvID_game_nama]
                     temp_riwayat = [game_id, nama_game, str(harga_game), username, "2022"]
                     data_riwayat = arr.fungsi_append(data_riwayat, temp_riwayat)
