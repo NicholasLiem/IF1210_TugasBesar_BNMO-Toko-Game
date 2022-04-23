@@ -1,3 +1,7 @@
+#Penulis Modul: Moch. Sofyan Firdaus (16521144)
+#Judul Modul: Main
+#Tanggal: 19 April 2022
+
 import save
 
 def exit_program(data_user, data_user_baru, data_game, data_game_baru, data_riwayat, data_riwayat_baru, data_kepemilikan, data_kepemilikan_baru):

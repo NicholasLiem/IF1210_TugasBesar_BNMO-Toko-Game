@@ -1,3 +1,7 @@
+#Penulis Modul: Nicholas Liem - 16521108
+#Judul Modul: List Game
+#Tanggal: 17 April 2022
+
 import operasi_array as arr
 import constant as c
 
@@ -5,13 +9,16 @@ def buy_game(data_game, data_kepemilikan, data_user, data_riwayat, username):
     user_id = username
     game_id = input(c.bg_idGame)
 
+    #Mengambil data user (satu row)
     row_data_user = arr.find_row_id(data_user, c.csvID_user_username, user_id)
     data_user_baris = data_user[row_data_user]
 
     saldo_user = int(data_user_baris[c.csvID_user_saldo])
 
+    #Mencari apakah game id yang dicari ada tau tidak
     found_game_id = arr.found_in_kolom(data_game, c.csvID_game_id, game_id)
     if found_game_id:
+        #Mengambil satu row baris data game
         row_game_id = arr.find_row_id(data_game, c.csvID_game_id, game_id)
         data_row_game_id = data_game[row_game_id]
         data_pemilik_game = arr.all_valid_row(data_kepemilikan, c.csvID_game_id, game_id)
@@ -45,18 +52,7 @@ def buy_game(data_game, data_kepemilikan, data_user, data_riwayat, username):
                     temp_riwayat = [game_id, nama_game, str(harga_game), username, "2022"]
                     data_riwayat = arr.fungsi_append(data_riwayat, temp_riwayat)
                     
-                    # matrix_to_csv("Data/kepemilikan.csv",data_kepemilikan)
-                    # matrix_to_csv("Data/user.csv", data_user)
-                    # matrix_to_csv("Data/game.csv", data_game)
-                    # matrix_to_csv("Data/riwayat.csv", data_riwayat)
                     print(f"Kamu berhasil membeli '{data_game[row_game_id][c.csvID_game_nama]}'! Saldo sekarang: {data_user[row_data_user][c.csvID_user_saldo]}.")
 
     else:
         print(c.bg_notFound)
-
-
-# data_game = csv_to_matrix("Data/game.csv")
-# data_kepemilikan = csv_to_matrix("Data/kepemilikan.csv")
-# data_user = csv_to_matrix("Data/user.csv")
-# data_riwayat = csv_to_matrix("Data/riwayat.csv")
-# buy_game(data_game, data_kepemilikan, data_user, data_riwayat, "admin")

@@ -1,3 +1,7 @@
+#Penulis Modul: Moch. Sofyan Firdaus (16521144)
+#Judul Modul: Parseran
+#Tanggal: 9 April 2022
+
 import os
 import time
 import argparse
@@ -19,6 +23,7 @@ def load():
         data_riwayat = parseran.csv_to_matrix(directory + '/riwayat.csv')
         data_kepemilikan = parseran.csv_to_matrix(directory + '/kepemilikan.csv')
         return (True, data_game, data_user, data_riwayat, data_kepemilikan)
+        
     else:
         print(f'Folder "{directory}" tidak ditemukan.')
         return (False, [], [], [], [])
