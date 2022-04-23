@@ -8,15 +8,14 @@ def help(role):
         print("============ HELP ============")
         print("1. register - Untuk melakukan registrasi user baru")
         print("2. login - Untuk melakukan login ke dalam sistem")
-        print("3. register - Untuk menambah akun ke data user")
-        print("4. tambah_game - Untuk menambah game yang dijual pada toko")
-        print("5. ubah_game - Untuk mengubah data game")
-        print("6. ubah_stok - Untuk mengubah stok game")
-        print("7. list_game_toko - Untuk melihat list game yang dijual pada toko")
-        print("8. search_game_at_store - Untuk mencari game pada toko")
-        print("9. topup - Untuk melakukan topup saldo")
-        print("10. save - Untuk melakukan penyimpanan data")
-        print("11. exit - Untuk keluar dari program")
+        print("3. tambah_game - Untuk menambah game yang dijual pada toko")
+        print("4. ubah_game - Untuk mengubah data game")
+        print("5. ubah_stok - Untuk mengubah stok game")
+        print("6. list_game_toko - Untuk melihat list game yang dijual pada toko")
+        print("7. search_game_at_store - Untuk mencari game pada toko")
+        print("8. topup - Untuk melakukan topup saldo")
+        print("9. save - Untuk melakukan penyimpanan data")
+        print("10. exit - Untuk keluar dari program")
         print("\n")
 
     elif role == "user":
@@ -32,7 +31,7 @@ def help(role):
         print("8. save - Untuk melakukan penyimpanan data")
         print("9. exit - Untuk keluar dari program")
         print("\n")
-        
+
     else:
         print("\n")
         print("============ HELP ============")
