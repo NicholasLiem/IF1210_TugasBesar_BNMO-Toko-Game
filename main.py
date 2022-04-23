@@ -21,6 +21,8 @@ import save
 import exit_program
 import constant as c
 
+status = ("", "", False)
+
 (sukses, data_game, data_user, data_riwayat, data_kepemilikan) = load.load()
 data_game_baru = arr.copy(data_game)
 data_user_baru = arr.copy(data_user)
@@ -34,7 +36,7 @@ if sukses:
         print('Maaf, Anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
         command = input('>>> ')
     if command == 'login':
-        (username, role) = login.login(data_user)
+        status = login.login(data_user,status)
     else:
         help.help('')
     while not selesai:

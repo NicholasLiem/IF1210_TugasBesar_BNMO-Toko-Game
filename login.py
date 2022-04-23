@@ -3,23 +3,29 @@
 #Tanggal: 9 April 2022
 
 import constant as c
+import operasi_array as arr
 
-def login(data_user):
+def login(data_user, datatemp):
     #user melakukan input username dan password
     username=input(c.login_username)
     password=input(c.login_password)
     #has_logged_in diset sebagai False karena belum terlogin
     has_logged_in = False
     #apabila ditemukan username dan password yang sama di csv dengan yang diinput oleh user maka terdeteksi bahwa login berhasil
-    for item in data_user:
-        if item[c.csvID_user_username] == username:
-            if item[c.csvID_user_password] == password:
-                print (f"Halo {item[c.csvID_user_nama]} Selamat datang di Binomo")
-                has_logged_in = True
-                role = item[c.csvID_user_role]
-                return username, role
+    
+    user_valid = arr.found_in_kolom(data_user, c.csvID_user_username, username)
+    if user_valid:
+        row_user = arr.find_row_id(data_user, c.csvID_user_username, username)
+        password_user = data_user[row_user][c.csvID_user_password]
 
-    #apabila tidak ditemukan username dan password yang sama di csv dengan yang diinput oleh user maka login gagal                  
-    if has_logged_in == False:
+        if password != password_user:
+            print(c.login_invalid)
+            return(datatemp)
+        else:
+            print (f"Halo {[c.csvID_user_nama]} Selamat datang di Binomo")
+            role = data_user[row_user][c.csvID_user_role]
+            has_logged_in = True
+            return (username, role, has_logged_in)
+    else:
         print(c.login_invalid)
-        return has_logged_in
+        return(datatemp)
