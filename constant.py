@@ -3,6 +3,14 @@ u_idGame = "Masukkan ID Game: "
 u_jumlah = "Masukkan jumlah: "
 u_notFound = "Tidak ada game dengan ID tersebut!"
 
+#Bagian Beli Game
+bg_idGame = "Masukkan ID Game: "
+bg_notFound = "Maaf, tidak ditemukan game dengan ID tersebut."
+bg_sudahPunya = "Anda sudah memiliki Game tersebut!"
+bg_saldoTidakCukup = "Saldo anda tidak cukup untuk membeli Game tersebut!"
+bg_stokHabis = "Stok Game tersebut sedang habis!"
+
+
 #Bagian TambahGame
 tg_invalid = "Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO."
 

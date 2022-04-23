@@ -13,4 +13,5 @@ def help(role):
         print("============ HELP ============")
         print("1. login - Untuk melakukan login ke dalam sistem")
         print("2. list_game_toko - Untuk melihat list game yang dijual pada toko")
-        print("3. ")
+
+#belom ada role
