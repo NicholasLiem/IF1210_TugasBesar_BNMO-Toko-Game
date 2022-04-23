@@ -6,28 +6,22 @@ import operasi_array as arr
 import constant as c
 
 def register(data_user):
+    found = True
     #input nama user
     name = input(c.register_nama)
-    while True:
-        #input username
-        user_baru = input(c.register_username)
-        found = False
-        for item in data_user:
-            #jika ditemukan username yang sama pada data csv maka akan dicetak pemberitahuan di line 23
-            if user_baru == item[c.csvID_user_username] or user_baru == "" :
-                found= True
-                break
-        if not found:
-            break
-        else: #found = True
-            print(f"Username {user_baru} sudah terpakai, silakan menggunakan username lain.")
-
-    #input password
+    user_baru = input(c.register_username)
     password = input(c.register_password)
-    if password == "" :
-        print ("Password tidak boleh kosong")
-        return data_user
-    
+
+    #Batas 2
+    while arr.found_in_kolom(data_user, c.csvID_user_username, user_baru) or (name == "" or user_baru == "" or password == ""):
+        if (name == "" or user_baru == "" or password == ""):
+            print("Nama, username, atau password tidak boleh kosong")
+        else:
+            print(f"Username {user_baru} sudah terpakai, silahkan gunakan username lain.")
+        name = input(c.register_nama)
+        user_baru = input(c.register_username)
+        password = input(c.register_password)
+
     #role secara otomatis menjadi user
     role = "user" 
     balance= "0"

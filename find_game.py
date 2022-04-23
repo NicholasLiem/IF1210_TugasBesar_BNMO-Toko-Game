@@ -67,7 +67,7 @@ def search_game_at_store(data_game):
         else:
             if found_price and found_category and found_releaseYear:
                 if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS") and arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                    array_temp = []
+                    array_temp = [data_game[0]]
                     for item in baris_price:
                         for items in baris_kategori:
                             for itemss in baris_releaseYear:

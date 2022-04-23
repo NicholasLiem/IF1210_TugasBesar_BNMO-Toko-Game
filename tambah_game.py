@@ -26,6 +26,7 @@ def tambah_game(data_game):
         tahun = input(c.s_releaseYear)
         harga = input(c.s_priceGame)
         stok = input(c.s_firstStock)
+        is_valid = (nama != "") and (kategori != "") and (tahun != "") and (harga != "") and (stok != "")
     
     #Pendefinisian format ID game
     ID = "GAME{:04}".format((arr.panjang_baris(data_game)))
