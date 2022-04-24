@@ -49,7 +49,9 @@ def search_game_at_store(data_game):
                 if (data_game[row_id][i] != array_input[i]) and array_input[i] != "":
                     flag = True
             if flag == False:
-                arr.cetak_tabel([data_game[row_id]])
+                array_with_header = [data_game[0]]
+                array_with_header = arr.fungsi_append(array_with_header, data_game[row_id])
+                arr.cetak_tabel(array_with_header)
             else:
                 print(c.s_notFound)
 
@@ -59,7 +61,9 @@ def search_game_at_store(data_game):
                 if data_game[row_nama][i] != array_input[i] and array_input[i] != "":
                     flag = True
             if flag == False:
-                arr.cetak_tabel([data_game[row_id]])
+                array_with_header = [data_game[0]]
+                array_with_header = arr.fungsi_append(array_with_header, data_game[row_id])
+                arr.cetak_tabel(array_with_header)
             else:
                 print (c.s_notFound)
 
@@ -80,31 +84,49 @@ def search_game_at_store(data_game):
             #Kasus 2 benar, satu salah
             elif found_price and found_category and not found_releaseYear:
                 if arr.operasi_dua_array(baris_price, baris_kategori, "CHECK_IF_CONSISTS"):
-                    arr.cetak_tabel(arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"))
+                    array_with_header = [data_game[0]]
+                    for item in arr.operasi_dua_array(baris_price, baris_kategori, "RETURN_SAME"):
+                        array_with_header = arr.fungsi_append(array_with_header, item)
+                    arr.cetak_tabel(array_with_header)
                 else:
                     print(c.s_notFound)
 
             elif found_price and not found_category and found_releaseYear:
                 if arr.operasi_dua_array(baris_price, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                    arr.cetak_tabel(arr.operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"))
+                    array_with_header = [data_game[0]]
+                    for item in arr.operasi_dua_array(baris_price, baris_releaseYear, "RETURN_SAME"):
+                        array_with_header = arr.fungsi_append(array_with_header, item)
+                    arr.cetak_tabel(array_with_header)
                 else:
                     print(c.s_notFound)
 
             elif not found_price and found_category and found_releaseYear:
                 if arr.operasi_dua_array(baris_kategori, baris_releaseYear, "CHECK_IF_CONSISTS"):
-                    arr.cetak_tabel(arr.operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"))
+                    array_with_header = [data_game[0]]
+                    for item in arr.operasi_dua_array(baris_kategori, baris_releaseYear, "RETURN_SAME"):
+                        array_with_header = arr.fungsi_append(array_with_header, item)
+                    arr.cetak_tabel(array_with_header)
                 else:
                     print(c.s_notFound)
 
             #Kasus 1 benar, 2 salah
             elif found_price and not found_category and not found_releaseYear:
-                arr.cetak_tabel(baris_price)
+                array_with_header = [data_game[0]]
+                for item in baris_price:
+                    array_with_header = arr.fungsi_append(array_with_header, item)
+                arr.cetak_tabel(array_with_header)
 
             elif not found_price and found_category and not found_releaseYear:
-                arr.cetak_tabel(baris_kategori)
+                array_with_header = [data_game[0]]
+                for item in baris_kategori:
+                    array_with_header = arr.fungsi_append(array_with_header, item)
+                arr.cetak_tabel(array_with_header)
 
             elif not found_price and not found_category and found_releaseYear:
-                arr.cetak_tabel(baris_releaseYear)
+                array_with_header = [data_game[0]]
+                for item in baris_releaseYear:
+                    array_with_header = arr.fungsi_append(array_with_header, item)
+                arr.cetak_tabel(array_with_header)
                 
             else:
                 print(c.s_notFound)
