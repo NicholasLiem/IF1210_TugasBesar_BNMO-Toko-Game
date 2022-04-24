@@ -47,14 +47,16 @@ def search_my_game(data_kepemilikan, data_game, username):
             #jika tahun yang dimasukkan merupakan bagian dari data_riwayat, maka akan diprint semua data yang berhubungan dengan tahun tsb
             if (id_game == "") and tahun_rilis_in_array:
                 array_without_header = [sliced_header]
-                array_without_header = arr.fungsi_append(array_without_header, data_baris_tahun_rilis[0])
+                for item in data_baris_tahun_rilis:
+                    array_without_header = arr.fungsi_append(array_without_header, item)
                 arr.cetak_tabel(array_without_header)
 
             #Kasus kedua mengecek jika tahun yang diisi kosong, dan mengecek jika id_game inputnya terdaftar di data_riwayat, kemudian
             #jika terdaftar di data_riwayat, akan dikeluarkan data sesuai dengan id_game yang diinput
             elif (tahun_rilis == "") and id_game_in_array:
                 array_without_header = [sliced_header]
-                array_without_header = arr.fungsi_append(array_without_header, data_baris_game_id[0])
+                for item in data_baris_game_id:
+                    array_without_header = arr.fungsi_append(array_without_header, item)
                 arr.cetak_tabel(array_without_header)
 
             #Kasus ketiga mengecek jika id_game yang diinput berada dalam data_riwayat, kemudian mengecek apakah pada baris id_game tersebut
@@ -63,8 +65,7 @@ def search_my_game(data_kepemilikan, data_game, username):
             #variabel terisi, oleh karena itu diperlukan kasus khusus ini.
             elif id_game_in_array and (data_baris_game_id)[0][c.csvID_game_releaseYear] == tahun_rilis:
                 array_without_header = [sliced_header]
-                for item in data_baris_game_id:
-                    array_without_header = arr.fungsi_append(array_without_header, item)
+                array_without_header = arr.fungsi_append(array_without_header, data_baris_game_id)
                 arr.cetak_tabel(array_without_header)
                 
             #Tidak memenuhi semua kasus, artinya data tidak ditemukan.
