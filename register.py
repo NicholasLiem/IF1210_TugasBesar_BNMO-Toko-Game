@@ -6,7 +6,6 @@ import operasi_array as arr
 import constant as c
 
 def register(data_user):
-    found = True
     #input nama user
     name = input(c.register_nama)
     user_baru = input(c.register_username)

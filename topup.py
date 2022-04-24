@@ -13,19 +13,21 @@ def topup(data_user):
         print(f"Username '{username}' tidak ditemukan.")
 
     else:
+        if saldo_topup != "":
+            row_id = arr.find_row_id(data_user,c.csvID_user_username,username)
+            nama = data_user[row_id][c.csvID_user_nama]
+            saldo_data = int(data_user[row_id][c.csvID_user_saldo])
+            new_saldo = saldo_topup + saldo_data
 
-        row_id = arr.find_row_id(data_user,c.csvID_user_username,username)
-        nama = data_user[row_id][c.csvID_user_nama]
-        saldo_data = int(data_user[row_id][c.csvID_user_saldo])
-        new_saldo = saldo_topup + saldo_data
-
-        #Ketika jumlah saldo yang diinput dan yang ada hasilnya negatif, maka tidak bisa diproses
-        if new_saldo < 0:
-            print(c.t_invalid)
-            
-        else: #Username ada dan saldo hasil positif
-            temp = arr.copy(data_user[row_id])
-            temp[c.csvID_user_saldo] = str(new_saldo)
-            data_user[row_id] = temp
-            print(f"Top up berhasil. Saldo {nama} bertambah menjadi {new_saldo}.")
+            #Ketika jumlah saldo yang diinput dan yang ada hasilnya negatif, maka tidak bisa diproses
+            if new_saldo < 0:
+                print(c.t_invalid)
+                
+            else: #Username ada dan saldo hasil positif
+                temp = arr.copy(data_user[row_id])
+                temp[c.csvID_user_saldo] = str(new_saldo)
+                data_user[row_id] = temp
+                print(f"Top up berhasil. Saldo {nama} bertambah menjadi {new_saldo}.")
+        else:
+            print("Saldo topup tidak boleh kosong!")
     return data_user
