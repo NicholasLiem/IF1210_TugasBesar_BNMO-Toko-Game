@@ -50,6 +50,11 @@ l_listing = "Daftar game:"
 r_notFound = "Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah buy_game untuk membeli."
 r_listing = "Daftar game:"
 
+# Bagian main program
+error_belum_login = 'Maaf, Anda harus login terlebih dahulu untuk mengirim perintah selain "login"'
+error_hanya_admin = 'Maaf, Anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk menjalankan hal tersebut.'
+error_hanya_user = 'Maaf, Anda harus menjadi user untuk melakukan hal tersebut.'
+
 #ID kolom | game.csv
 csvID_game_id = 0
 csvID_game_nama = 1
@@ -76,7 +81,3 @@ csvID_user_nama = 2
 csvID_user_password = 3
 csvID_user_role = 4
 csvID_user_saldo = 5
-
-# Bagian main program
-error_hanya_admin = 'Maaf, Anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk menjalankan hal tersebut.'
-error_hanya_user = 'Maaf, Anda harus menjadi user untuk melakukan hal tersebut.'

@@ -33,7 +33,7 @@ selesai = False
 if sukses:
     command = input('>>> ')
     while command != 'login' and command != 'help':
-        print('Maaf, Anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
+        print(c.error_belum_login)
         command = input('>>> ')
     if command == 'login':
         status = login.login(data_user_baru,status)
