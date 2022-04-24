@@ -15,19 +15,19 @@ def panjang_kolom(array):
     return panjangKolom
 
 def fungsi_append(array,s):
-    list = ['' for i in range(panjang_baris(array)+1)]
+    temp = ['' for i in range(panjang_baris(array)+1)]
     for i in range (panjang_baris(array)+1):
         if i < panjang_baris (array):
-            list[i]=array[i]
+            temp[i]=array[i]
         else:
-            list[i]=s
-    return list
+            temp[i]=s   
+    return temp
 
 def copy(array):
-    tmp = ['' for _ in range(panjang_baris(array))]
+    temp = ['' for _ in range(panjang_baris(array))]
     for i in range(panjang_baris(array)):
-        tmp[i] = array[i]
-    return tmp
+        temp[i] = array[i]
+    return temp
 
 def join(s, array_string):
     out = ''
@@ -39,19 +39,13 @@ def join(s, array_string):
 
 #SEARCHING
 def found_in_kolom(array,kolom_id,validator):
-    found = False
     for i in range(panjang_baris(array)):
         if array[i][kolom_id] == validator:
-            found = True
-    if found == True:
-        return True
-    else:
-        return False
+            return True
+    return False
 
 def all_valid_row(array,csvID,validator):
     data_baris = []
-    if array == []:
-        return []
     for baris in array:
         if baris[csvID] == validator:
             data_baris = fungsi_append(data_baris, baris)
@@ -60,8 +54,7 @@ def all_valid_row(array,csvID,validator):
 def find_row_id(array, csvID, validator):
     #Asumsikan bahwa data pasti ada di barisnya
     panjang_baris_data = panjang_baris(array)
-    baris_id = -1
-    for i in range(1,panjang_baris_data,1):
+    for i in range(1,panjang_baris_data):
         if array[i][csvID] == validator:
             baris_id = i
     return baris_id
