@@ -15,7 +15,7 @@ def ubah_stok(data_game):
     else:
         row_id = arr.find_row_id(data_game,c.csvID_game_id,game_id)
         stock_input = input(c.u_jumlah)
-        if stock_input != "":
+        if stock_input != "" and (arr.cekinteger(stock_input)):
             stock_input = int(stock_input)
             stock_data = int(data_game[row_id][c.csvID_game_stock])
             nama_game = data_game[row_id][c.csvID_game_nama]
@@ -42,5 +42,5 @@ def ubah_stok(data_game):
                 data_game[row_id] = temp
                 print(f"Stok game {nama_game} berhasil dikurangi. Stok sekarang: {new_stock_data}")
         else:
-            print("Stok input tidak boleh kosong.")
+            print("Stok input tidak boleh kosong atau bukan angka.")
     return data_game
